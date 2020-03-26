@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+
+.menu1{
+    background: #FE2817;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+  }
+
+.menu1 ul{
+    display: flex;
+    list-style: none;
+    padding: 5px;
+    letter-spacing: 20px;
+    font-size: 20px;
+    margin-left: 62%;
+}
+
+.menu1 ul:visited{
+    color: black;
+}
+
+.menu1 .fas{
+    color: black;
+}
+
+.menu1 h3{
+  padding: 5px;
+}
+
+  header {
+    height: 64px;
+    background: #FC7323;
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #btn-menu {
+    display: none;
+  }
+  
+  header label {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .menu ul {
+    background: #FC7323;
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu ul ul {
+    display: none;
+    
+    z-index: 2;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    text-decoration: none;
+    line-height: 32px;
+    font-weight: 700;
+  }
+  
+  .menu a:hover {
+    color: #555;
+  }
+  
+  .menu a i {
+    margin-left: 10px;
+  }
+  
+  .menu ul li:hover ul {
+    transition: all 0.3s ease;
+    display: block;
+    position: absolute;
+  }
+
+  @media (max-width: 1339px){
+    .menu1 h2
+    {
+      display: flex;
+      list-style: none;
+      font-size: 20px;
+      margin-left: 10%;
+      word-spacing: 10px;
+    }
+    .menu1 ul {
+        margin-left: 12%;
+        word-spacing: 10px;
+    }
+    .menu1 ul li {
+      display: flex;
+      padding-right: 10px;
+  }
+    .menu1 a > i{
+      margin-left: 60%;
+      display: inline-table;
+      width: 5%;
+  }
+
+}
+  
+  @media (max-width: 768px) {
+    header label {
+      display: block;
+      padding-top: 16px;
+      padding-right: 16px;
+      transition: all 0.4s ease;
+    }
+    
+    .menu {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 70%;
+      transform: translateX(-100%);
+      transition: all 0.3s;
+      z-index: 2;
+    }
+    
+    .menu ul {
+      flex-direction: column;
+      display: block;
+    }
+    
+    .menu ul li:hover ul {
+      display: none;
+      position: static;
+    }
+    
+    .menu a i {
+      position: absolute;
+      right: 16px;
+      line-height: 32px;
+    }
+    
+    #btn-menu:checked ~ .menu {
+      transform: translateX(0%);
+    }
+    
+  }
+  
+main{
+    text-align: center;
+    padding: 30px;
+}
+
+main img{
+    width: 290px;
+    height: 240px;
+    opacity: 0.8;
+}

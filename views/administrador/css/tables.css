@@ -1,0 +1,294 @@
+body{
+  text-align: center;
+}
+
+table{
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 12px;
+  width: 90%;
+  padding: 10px;
+}
+
+h3{
+  margin: 25px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+div {
+  margin: 25px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+table td {
+  transition: all .5s;
+}
+
+.form{
+  display: flex;
+  width: 65%;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.form input{
+  border-radius: 5px;
+  height: 23px;
+  width: 30% ;
+}
+
+.form .input:focus-visible{
+  background: #FC7323;
+}
+
+/* Table Header */
+#titulo {
+  background-color: #FC7323;
+  color: black;
+  border-color: #FC7323 !important;
+}
+
+/* Table */
+.tabla_datos {
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 537px;
+}
+
+.tabla_datos th, 
+.tabla_datos td {
+  border: 1px solid #ffffff;
+  padding: 7px 17px;
+}
+.tabla_datos caption {
+  margin: 7px;
+}
+
+/* Table Body */
+.tabla_datos tbody td {
+  color: black;
+}
+.tabla_datos tbody td:first-child,
+.tabla_datos tbody td:nth-child(4) {
+  text-align: right;
+}
+
+.tabla_datos tbody tr:nth-child(odd) td {
+  background-color: #ffffff;
+}
+.tabla_datos tbody tr:hover td {
+  background-color: #ddd;
+  border-color: #ddd;
+}
+
+/* Table Footer */
+.tabla_datos tfoot th {
+  background-color: #FC7323;
+  text-align: right;
+}
+.tabla_datos tfoot th:first-child {
+  text-align: left;
+}
+.tabla_datos tbody td:empty
+{
+  background-color: #ffcccc;
+}
+
+.boton_personalizado a{
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: black;
+  background-color: #00B0AF;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.boton_personalizado2 a{
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: black;
+  background-color: #FE2817;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.boton_personalizado0 a{
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: black;
+  background-color: #C95C1C;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.boton_personalizado4 {
+    margin-right: 40%;
+}
+
+.boton_personalizado4 a{
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: black;
+  background-color: #00B0AF;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.boton_personalizado3 a{
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: black;
+  background-color: rgb(21, 176, 0);
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.form1{
+  padding: 35px;
+  border-radius: 10px;
+  margin: auto;
+  width: 30%;
+  filter: blur(0.4px);
+  box-shadow:
+  /*bottom shadow*/
+  0px 20px 20px rgba(255, 255, 255, 0.1),
+  /* 0px 5px 10px rgba(0,0,0,0.1), */
+  /*long bottom shadow*/
+  /* 0px 70px 50px rgba(0,0,0,0.1), */
+  /*right shadow*/
+  0px 50px 50px rgba(0,0,0,0.1),
+  /*left shadow*/
+  -30px 50px 50px rgba(0,0,0,0.1), 
+  /*right inset*/
+  inset 20px 0px 60px rgba(255, 255, 255, 0.1),
+  /*left inset*/
+  inset -20px 0px 60px rgba(255, 255, 255, 0.1);
+}
+
+.form1 label{
+  display: inline-block;
+  width: 150px;
+}
+
+.form1 input, .form1 select{
+    margin: auto;
+    border-radius: 2px;
+    width: 85%;
+    height: 30px;
+    justify-content: flex-start;
+}
+
+.form1 input[type="submit"]{
+  background-color: #FC7323;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.formulario{
+  width: 90%;
+  height: 60vh;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.formulario input{
+  border-radius: 2px;
+  width: 30%;
+  height: 25px;
+  justify-content: flex-start;
+}
+
+.formulario input[type="submit"]{
+  background-color: #FC7323;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.formulario i{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.popup{
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.popup-content{
+  height: 400px;
+  width: 950px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close{
+  position: absolute;
+  font-size: 30px;
+  top: 5px;
+  color: red;
+  right: 14px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+.popup2{
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.popup-content2{
+  height: 400px;
+  width: 950px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close2{
+  position: absolute;
+  font-size: 30px;
+  top: 5px;
+  color: red;
+  right: 14px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.popup .popup-content table .listar{
+  color: red;
+  text-decoration: none;
+}
+
+.popup .popup-content table .listar:hover{
+  color: black;
+}
