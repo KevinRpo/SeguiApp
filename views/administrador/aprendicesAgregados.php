@@ -23,12 +23,15 @@
     <br />
     <h3>Aprendices Agregados</h3>
     <div class="form">
-        <button class="boton_personalizado4"><a href="../administrador/agregarAprendiz">Agregar Aprendiz <i class="fas fa-user-plus"></i></a></button>
         <input type="text" class="input" name="caja_busqueda" id="caja_busqueda" placeholder="Buscar..."/>
         <label for="caja_busqueda"><i class="fas fa-search"></i></label>
     </div>
     
     <div id="datos"></div>
+
+    <br/></br />
+    
+    <a href="../administrador/agregarAprendiz" class="add">Agregar Aprendiz <i class="fas fa-user-plus"></i></a>
 
     <script src="../administrador/js/jquery.min.js"></script>
     <script src="../administrador/js/buscarAprendiz.js"></script>

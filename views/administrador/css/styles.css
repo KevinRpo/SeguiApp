@@ -154,10 +154,12 @@
 main{
     text-align: center;
     padding: 30px;
+    text-transform: uppercase;
 }
 
 main img{
-    width: 290px;
-    height: 240px;
+  transform: translate(2%, 30%);
+    width: 320px;
+    height: 270px;
     opacity: 0.8;
 }

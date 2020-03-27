@@ -158,15 +158,17 @@ body{
     
   }
 
-main{
+  main{
     text-align: center;
     padding: 30px;
+    text-transform: uppercase;
 }
 
 main img{
-    width: 290px;
-    height: 240px;
-    opacity: 0.8;
+  transform: translate(2%, 30%);
+  width: 320px;
+  height: 270px;
+  opacity: 0.8;
 }
 
 .notificacion{
@@ -299,4 +301,33 @@ main img{
   td > a:hover{
     text-decoration: none;
     color: #555;
+  }
+
+  .enviar-mensaje{
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+  }
+
+  .enviar-mensaje:hover{
+    color: #555;
+  }
+
+  .form1 textarea{
+    resize: none;
+  }
+
+  .form1 label{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .enviar{
+    width: 15%;
+    background: #ddd;
+    text-decoration: none;
+    color: black;
+    padding: 7px;
+    border-radius: 5px;
+    margin-left: 75%;
   }

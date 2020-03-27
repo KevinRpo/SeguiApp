@@ -46,9 +46,9 @@
     					<td>".$fila['email']."</td>
                         <td>".$fila['telefono']."</td>
                         <td>".$fila['numero_ficha']."</td>
-                        <td><button class='boton_personalizado' ><a href='../administrador/editarAprendiz?id_a=".$fila['id_a']." '><i class='fas fa-edit' title='Editar'></i></a></button> ||
-                        <button class='boton_personalizado2' id='confirm'><a href='../administrador/includes/eliminarAprendiz.php?id_a=".$fila['id_a']."'><i class='fas fa-trash' title='Eliminar'></i></a></button> || 
-                        <button class='boton_personalizado3'><a href='../administrador/includes/inhabilitarAprendiz.php?id_a=".$fila['id_a']."'><i class='fas fa-plane-departure' title='Inhabilitar'></i></a></button></td>
+                        <td><a href='../administrador/editarAprendiz?id_a=".$fila['id_a']." '><i class='fas fa-edit editar' title='Editar'></i></a> ||
+                        <a href='../administrador/includes/eliminarAprendiz.php?id_a=".$fila['id_a']."'><i class='fas fa-trash eliminar' id='confirm title='Eliminar'></i></a>|| 
+                        <a href='../administrador/includes/inhabilitarAprendiz.php?id_a=".$fila['id_a']."'><i class='fas fa-plane-departure habilitar' title='Inhabilitar'></i></a></td>
     				</tr>";
     	}
     	$salida.="</tbody></table>";

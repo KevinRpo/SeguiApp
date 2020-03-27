@@ -152,15 +152,17 @@ body{
     
   }
 
-main{
+  main{
     text-align: center;
     padding: 30px;
+    text-transform: uppercase;
 }
 
 main img{
-    width: 290px;
-    height: 240px;
-    opacity: 0.8;
+  transform: translate(2%, 30%);
+  width: 320px;
+  height: 270px;
+  opacity: 0.8;
 }
 
 .form1{
@@ -251,4 +253,16 @@ td > a{
 td > a:hover{
   text-decoration: none;
   color: #555;
+}
+
+.mensaje{
+  font-size: 20px;
+  padding: 2px;
+}
+
+.menu ul li b{
+  color: white;
+  position: absolute;
+  margin-top: -15px;
+  z-index: 2;
 }

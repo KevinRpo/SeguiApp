@@ -5,7 +5,8 @@
     if(!isset($id)){
         header("location:../../index");
     } else {
-    ?>
+
+?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -20,40 +21,31 @@
     <body>
         <?php require_once './header/header.php'; ?>
         <main>
-            <h1>Subir Formato - 023</h1><br/>
-            <form action="includes/subirInforme.php" method="POST" class="form1" enctype="multipart/form-data">
-                <label for="archivo">Subir Informe</label> <br /><br />
-                <input type="file" name="archivo" id="archivo" required/> <br /><br />
-
-                <label for="id_a">Identificación - Aprendiz</label> <br /><br />
-                <input type="number" name="id_a" id="id_a" required/> <br /><br />
-
-                <input type="submit" value="SUBIR" name="subir" class="button">
-            </form>
-            <br /><br />
             <h2>Tus formatos</h2>
+
             <br />
             <center>
                 <table class="table">
                     <tr>
                         <th>Informe</th>
                         <th>Fecha</th>
+                        <th>Identificación - Aprendiz</th>
                         <th>Acción</th>
                     </tr>
                     <tr>
                     <?php
                     
-                     include '../../database/conexion.php';
+                        include '../../database/conexion.php';
 
                         $sql = "SELECT * FROM tbl_informe WHERE id_instructor = '".$id."'";
 
                         $resultado = mysqli_query($conexion, $sql);
 
                         while ($fila = mysqli_fetch_assoc($resultado)) {
-                            
                         ?>
                         <td><a href="ver?id=<?=$fila['id_informe']?>"><?=$fila['archivo']?></a></td>
                         <td><?=$fila['fecha']?></td>
+                        <td><?=$fila['id_a']?></td>
                         <td><a href="includes/eliminarInforme.php?id=<?=$fila['id_informe']?>">Eliminar</a></td>
                     </tr>
                     <?php } ?>

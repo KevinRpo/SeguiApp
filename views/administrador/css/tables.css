@@ -99,58 +99,42 @@ table td {
   background-color: #ffcccc;
 }
 
-.boton_personalizado a{
-  text-decoration: none;
-  padding: 5px 10px;
-  font-size: 15px;
-  color: black;
-  background-color: #00B0AF;
-  border-radius: 6px;
-  font-weight: bold;
+.eliminar{
+  font-size: 20px;
+  color: red;
 }
 
-.boton_personalizado2 a{
-  text-decoration: none;
-  padding: 5px 10px;
-  font-size: 15px;
-  color: black;
-  background-color: #FE2817;
-  border-radius: 6px;
-  font-weight: bold;
+.editar{
+  font-size: 20px;
+  color: blue;
 }
 
-.boton_personalizado0 a{
-  text-decoration: none;
-  padding: 5px 10px;
-  font-size: 15px;
-  color: black;
-  background-color: #C95C1C;
-  border-radius: 6px;
-  font-weight: bold;
+.habilitar{
+  font-size: 20px;
+  color: chocolate;
 }
 
-.boton_personalizado4 {
-    margin-right: 40%;
+.inhabilitar{
+  font-size: 20px;
+  color: greenyellow;
 }
 
-.boton_personalizado4 a{
+.add{
+  width: 30%;
+  background: #ddd;
   text-decoration: none;
-  padding: 5px 10px;
-  font-size: 15px;
   color: black;
-  background-color: #00B0AF;
-  border-radius: 6px;
-  font-weight: bold;
+  padding: 4px;
+  border-radius: 5px;
 }
 
-.boton_personalizado3 a{
-  text-decoration: none;
-  padding: 5px 10px;
-  font-size: 15px;
-  color: black;
-  background-color: rgb(21, 176, 0);
-  border-radius: 6px;
-  font-weight: bold;
+.form #caja_busqueda{
+  width: 20%;
+}
+
+.form{
+  width: 90%;
+  justify-content: flex-end;
 }
 
 .form1{

@@ -36,7 +36,7 @@
             <?php 
                     include '../../database/conexion.php';
 
-                    $sql = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_instructor = '$id' ORDER BY id_instructor DESC");
+                    $sql = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_instructor = '$id' ORDER BY id_citacion DESC");
 
                         while ($fila = mysqli_fetch_array($sql)) {
                             
@@ -47,13 +47,12 @@
                             <td><?=$fila['mensaje']?></td>
                             <td><?=$fila['id_a']?></td>
                             <td><a href="includes/cancelarVisita.php?id_citacion=<?=$fila['id_citacion']?>">Cancelar Visita</a> ||
-                            <a href="#">Cambiar Fecha</a></td>
+                            <a href="editarVisita?id_citacion=<?php echo $fila['id_citacion'] ?>">Editar</a></td>
                         </tr>
                         <?php } ?>
             </table>
         </center>
         </main>
-    </body>
 </html>
 
 <?php } ?>

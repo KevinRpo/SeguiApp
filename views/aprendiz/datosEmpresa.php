@@ -41,7 +41,7 @@
                 <input type="number" name="tel" id="tel" required/>
                 
                 <br /><br />
-                <label for="nit">Email - Empresa</label>
+                <label for="nit">Correo - Jefe</label>
                 <input type="email" name="email" id="email" required />
                
                 <br /><br />

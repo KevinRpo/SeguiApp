@@ -9,6 +9,7 @@ body { margin: 0; padding: 0;}
     width:30em;
     margin-left: -15%;
     top: 45px;
+    z-index: 2;
 }
 
 #map {

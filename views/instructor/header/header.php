@@ -20,7 +20,25 @@
             <li><a href="../instructor/aprendicesAsignados">Tus Aprendices</a></li> 
             <li><a href="../instructor/agendarCita">Agendar Cita</a></li> 
             <li><a href="../instructor/agendas">Tus Agendas</a></li> 
-            <li><a href="../instructor/informeSIGA">Formato023</a></li> 
+            <li><a href="../instructor/subirFormato">Formato023</a></li> 
+            <li><a href="../instructor/informeSIGA">Tus Formatos</a></li> 
+        <?php 
+            include '../../database/conexion.php';
+
+            if(!isset($_SESSION)) {session_start();} else{
+
+            
+            $id = $_SESSION['instructor'];
+
+            $notificacion = mysqli_query($conexion, "SELECT * FROM tbl_mensaje WHERE id_instructor = '$id' AND leido = 0" );
+
+            $num = mysqli_num_rows($notificacion);
+
+            }
+        ?>
+        <li><a href="../instructor/mensajes">Mensajes<i  class="fas fa-envelope mensaje"></i><b>
+  
+            <?php echo $num ?></b></a></li>
         </ul>
     </nav>
   </header>

@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $id = $_SESSION['aprendiz'];
+    $id = $_SESSION['instructor'];
 
     if(!isset($id)){
         header("location:../../index");
@@ -21,48 +21,43 @@
     <body>
         <?php require_once './header/header.php'; ?>
         <br/>
-        <h2>Próximas Visitas</h2>
+        <h2>Mensajes Recibidos</h2>
         <br /><br />
         <center>
             <table class="table">
                 <tr>
-                    <th>Identificación - Instructor</th>
-                    <th>Nombre - Instructor</th>
-                    <th>Fecha - Visita</th>
-                    <th>Hora - Vista</th>
-                    <th>Responder</th>
-                    <th>Marcar como</th>
+                    <th>Identificación - Aprendiz</th>
+                    <th>Nombre - Aprendiz</th>
+                    <th>Fecha</th>
+                    <th>Mensaje</th>
+                    <th>Marcar Como</th>
                 </tr>
                 <tr>
             <?php 
                     include '../../database/conexion.php';
 
-                    $sql = mysqli_query($conexion, "SELECT * FROM tbl_citacion AS ci INNER JOIN tbl_instructor AS ins
-                    ON ci.id_instructor = ins.id_instructor WHERE id_a = '$id' ORDER BY id_citacion DESC");
+                    $sql = mysqli_query($conexion, "SELECT * FROM tbl_mensaje AS me INNER JOIN tbl_aprendiz AS ap
+                    ON me.id_aprendiz = ap.id_a WHERE id_instructor = '$id' ORDER BY id_mensaje DESC");
 
                     while ($fila = mysqli_fetch_assoc($sql)) {
                             
                     ?>
-                            <td><?=$fila['id_instructor']?></td>
+                            <td><?=$fila['id_aprendiz']?></td>
                             <td><?=$fila['nombres']?> <?=$fila['apellidos']?></td>
                             <td><?=$fila['fecha']?></td>
-                            <td><?=$fila['hora']?></td>
                             <td><?=$fila['mensaje']?></td>
                             
                             <td>
                             <?php if($fila['leido'] == 0){ ?>
-                                <a  href="includes/leido.php?id_citacion=<?=$fila['id_citacion']?>">Leído</a>
+                                <a  href="includes/leido.php?id_mensaje=<?=$fila['id_mensaje']?>">Leído</a>
                             <?php } else{?>
-                                <a href="includes/Noleido.php?id_citacion=<?=$fila['id_citacion']?>">No leído</a>
+                                <a href="includes/Noleido.php?id_mensaje=<?=$fila['id_mensaje']?>">No leído</a>
                             <?php } ?>
                             </td>
                         </tr>
                         <?php } ?>
             </table>
         </center>
-
-        <br /><br />
-        <a href="enviarMensaje" class="enviar">Enviar Mensaje <i class="fas fa-envelope"></i></a>
 
     </body>
     </html>

@@ -25,7 +25,7 @@
             <center>
                 <table class="table">
                     <tr>
-                        <th>Bitacoras</th>
+                        <th>Bitácoras</th>
                         <th>Fecha</th>
                         <th>Identificación - Aprendiz</th>
                         <th>Acción</th>

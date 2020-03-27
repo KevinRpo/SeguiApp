@@ -28,13 +28,15 @@
                         <th>Nombre - Aprendiz</th>
                         <th>Ficha del Aprendiz</th>
                         <th>Dirección - Empresa</th>
+                        <th>Correo - Jefe</th>
                     </tr>
                     <tr>
                     <?php
                     
                      include '../../database/conexion.php';
 
-                        $sql = "SELECT * FROM tbl_asignar_aprendiz WHERE id_instructor = '".$id."'";
+                        $sql = "SELECT * FROM tbl_asignar_aprendiz AS asig INNER JOIN tbl_empresa AS em
+                        ON asig.id_aprendiz = em.id_a WHERE id_instructor = '$id'";
 
                         $resultado = mysqli_query($conexion, $sql);
 
@@ -45,6 +47,7 @@
                         <td><?=$fila['nombre_aprendiz']?> <?=$fila['apellidos_aprendiz']?></td>
                         <td><?=$fila['ficha_aprendiz']?></td>
                         <td><?=$fila['direccion_empresa_aprendiz']?></td>
+                        <td><?=$fila['correo_jefe']?></td>
                     </tr>
                     <?php } ?>
                 </table>

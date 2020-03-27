@@ -46,9 +46,9 @@
                         <td>".$fila['email']."</td>
                         <td>".$fila['telefono']."</td>
                         <td>".$fila['programa']."</td>
-                        <td><button class='boton_personalizado'><a href='../administrador/editarInstructor?id_instructor=".$fila['id_instructor']." '><i class='fas fa-edit' title='Editar'></i></a></button> ||
-						<button class='boton_personalizado2' id='confirm'><a href='../administrador/includes/eliminarInstructor.php?id_instructor=".$fila['id_instructor']."'><i class='fas fa-trash' title='Eliminar'></i></a></button> || 
-						<button class='boton_personalizado3'><a href='../administrador/includes/inhabilitarInstructor.php?id_instructor=".$fila['id_instructor']."'><i class='fas fa-plane-departure' title='Inhabilitar'></i></a></button></td>
+                        <td><a href='../administrador/editarInstructor?id_instructor=".$fila['id_instructor']." '><i class='fas fa-edit editar' title='Editar'></i></a></button> ||
+						<a href='../administrador/includes/eliminarInstructor.php?id_instructor=".$fila['id_instructor']."'><i class='fas fa-trash eliminar' id='confirm' title='Eliminar'></i></a></button> || 
+						<a href='../administrador/includes/inhabilitarInstructor.php?id_instructor=".$fila['id_instructor']."'><i class='fas fa-plane-departure inhabilitar' title='Inhabilitar'></i></a></button></td>
                     </tr>";
     	}
     	$salida.="</tbody></table>";

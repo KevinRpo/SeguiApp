@@ -9,6 +9,7 @@ if(isset($_POST['subir'])){
     $archivo = $_FILES['archivo']['name'];
     $guardado = $_FILES['archivo']['tmp_name'];
     $tipo = $_FILES['archivo']['type'];
+    $id_a = $_POST['id_a'];
 
     if($tipo == 'application/pdf'){
 

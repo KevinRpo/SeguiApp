@@ -38,7 +38,7 @@
         <li class="submenu"><a href="#">Archivos<i class="fas fa-folder-open"></i></a>
           <ul>
             <li><a href="../administrador/bitacorasAprendices">Bitacoras - Aprendices</a></li>
-            <li><a href="../administrador/informesInstructores">Informes - Instructor</a></li>
+            <li><a href="../administrador/informesInstructores">Formatos - Instructor</a></li>
           </ul>
         </li>
       </ul>

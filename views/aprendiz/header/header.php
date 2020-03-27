@@ -26,7 +26,7 @@
             
             $id = $_SESSION['aprendiz'];
 
-            $notificacion = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_a = '$id' AND leido = 1" );
+            $notificacion = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_a = '$id' AND leido = 0" );
 
             $num = mysqli_num_rows($notificacion);
 

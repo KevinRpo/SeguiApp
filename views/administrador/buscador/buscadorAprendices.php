@@ -45,8 +45,8 @@
     					<td>".$fila['email']."</td>
                         <td>".$fila['telefono']."</td>
                         <td>".$fila['numero_ficha']."</td>
-                        <td><button class='boton_personalizado'><a href='../administrador/editarAprendiz?id_a=".$fila['id_a']." '><i class='fas fa-edit' title='Editar'></i></a></button> ||
-                        <button class='boton_personalizado2' id='confirm'><a href='../administrador/includes/eliminarAprendiz.php?id_a=".$fila['id_a']."'><i class='fas fa-trash' title='Eliminar'></i></a></button>
+                        <td><a href='../administrador/editarAprendiz?id_a=".$fila['id_a']." '><i class='fas fa-edit editar' title='Editar'></i></a> ||
+                        <a href='../administrador/includes/eliminarAprendiz.php?id_a=".$fila['id_a']."'><i class='fas fa-trash eliminar' id='confirm' title='Eliminar'></i></a>
     				</tr>";
     	}
     	$salida.="</tbody></table>";

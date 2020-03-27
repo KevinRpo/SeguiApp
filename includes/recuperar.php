@@ -54,21 +54,6 @@ if(isset($_POST['enviar'])){
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
-        //Datos del envio
-        // $email_to = $email;
-        // $email_subject = "Recuperar clave";
-        // $email_from = "projectsena50@gmail.com";
-
-        // $email_message = "Hola " . $row['nombre'] . " , haz solictado cambiar tu contraseña, ingresa al siguiente link\n\n";
-        // $email_message .= "http://localhost/SeguiApp/views/nuevaClave.php?user=".$row['nombre']."&token=".$token."\n\n";
-
-        //Enviar email con funcion @mail de php
-        // $headers = 'From: '.$email_from."\r\n".
-        // 'Reply-To: '.$email_from."\r\n" .
-        // 'X-Mailer: PHP/' . phpversion();
-        // @mail($email_to, $email_subject, $email_message, $headers); 
-
-
     }else {
         echo "<script>
                 alert('Esta dirección de correo electrónico no existe, vuelvalo a intentar.');

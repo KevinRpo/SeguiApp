@@ -5,6 +5,9 @@
     if(!isset($id)){
         header("location:../../index");
     } else {
+        include '../../database/conexion.php';
+
+        $sql = mysqli_query($conexion, "SELECT id_aprendiz FROM tbl_asignar_aprendiz WHERE id_instructor = '$id'");
 
 ?>
     <!DOCTYPE html>
@@ -30,10 +33,16 @@
                 <input type="time" name="hora" id="hora"  required /> <br /><br />
 
                 <label for="id_a">Identificación - Aprendiz</label>
-                <select name="id_a" id="id_a">
-                    <option value="123">123456</option>
-                    <option value="456">1234</option>
+                <select id="id_a" name="id_a">
+                    <?php
+                        foreach($sql as $id) {
+                            echo "<option value='".$id['id_aprendiz']."'>".$id['id_aprendiz']."</option>";
+                        }
+                    ?>
                 </select>  <br /><br />
+
+                <label for="correo_jefe">Correo Jefe:</label>
+                <input type="email" name="correo_jefe" id="correo_jefe" /> <br /><br />
 
                 <label for="mensaje">Mensaje</label>
                 <textarea name="mensaje" id="mensaje" cols="32" rows="3" maxlength="70" minlength="5" required></textarea> <br /><br />
