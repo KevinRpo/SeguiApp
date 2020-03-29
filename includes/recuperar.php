@@ -48,7 +48,7 @@ if(isset($_POST['enviar'])){
         
         echo "<script>
                 alert('Te hemos enviado un email para cambiar tu contraseña');
-                window.history.go(-1);
+                window.history.go(-2);
             </script>";
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

@@ -14,70 +14,71 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="icon" href="../../assets/images/seguiapp.ico" />
       <link rel="stylesheet" href="../../assets/icons/css/all.min.css" />
-      <link rel="stylesheet" href="./css/tables.css" />
-      <link rel="stylesheet" href="./css/estilos.css"/>
+      <link rel="stylesheet" href="./css/styles.css"/>
+      <link rel="stylesheet" href="./css/formularios.css" />
+      <link rel="stylesheet" href="./css/tables.css"/>
       <title>SeguiApp</title>
   </head>
   <body>
     <?php require_once ('./header/header.php'); ?>
-    <br />
         
-        <div class="formulario">
-        <h2>Asignar Aprendiz</h2> 
-        <br />
-            <form action="includes/asignarAprendiz.php" method="POST">
-            <i class="fas fa-id-badge" id="open" title="Seleccionar Id_Aprendiz"></i>
-            <?php if(isset($_GET['id_a'])){ ?>
-                <input type="number" name="id_aprendiz" id="id_aprendiz" placeholder="Id_Aprendiz" value="<?php echo $_GET['id_a']?>" required />
-            <?php }else{ ?>
-                <input type="number" name="id_aprendiz" id="id_aprendiz" placeholder="Id_Aprendiz" required />
-            <?php } ?>
-                <input type="number" name="id_instructor" id="id_instructor" placeholder="Id_Instructor" required />  <i class="fas fa-id-badge" id="open2" title="Ver Instructores"></i>
-         
-            <br /><br />
+    <section class="form_wrap2">
+            <form action="includes/asignarAprendiz.php" class="form_contact"  method="POST">
+                <div class="user_info">
+                    <h2>Asignar Aprendiz</h2> 
+                    <ion-icon id="open" class="abrir" name="eye-outline"></ion-icon>
+                <?php if(isset($_GET['id_a'])){ ?>
+                    <input type="number" name="id_aprendiz" id="id_aprendiz" placeholder="Id_Aprendiz" value="<?php echo $_GET['id_a']?>" required />
+                <?php }else{ ?>
+                    <input type="number" name="id_aprendiz" id="id_aprendiz" placeholder="Id_Aprendiz" required />
+                <?php } ?>
+                    <ion-icon id="open2" class="abrir" name="eye-outline"></ion-icon> 
+                    <input type="number" name="id_instructor" id="id_instructor" placeholder="Id_Instructor" required /> 
+                <br /><br />
 
-            <?php if(isset($_GET['nombres'])){ ?>
-                <input type="text" name="nombre_aprendiz" id="nombre_aprendiz" value="<?php echo $_GET['nombres']?>" required />
-            <?php }else{ ?>
-                <input type="text" name="nombre_aprendiz" id="nombre_aprendiz" placeholder="Nombre Aprendiz" required />
-            <?php } ?>
-                <input type="text" name="nombre_instructor" id="nombre_instructor" placeholder="Nombre Instructor" required />
+                <?php if(isset($_GET['nombres'])){ ?>
+                    <input type="text" name="nombre_aprendiz" id="nombre_aprendiz" value="<?php echo $_GET['nombres']?>" required />
+                <?php }else{ ?>
+                    <input type="text" name="nombre_aprendiz" id="nombre_aprendiz" placeholder="Nombre Aprendiz" required />
+                <?php } ?>
+                    <input type="text" name="nombre_instructor" id="nombre_instructor" placeholder="Nombre Instructor" required />
 
-            <br /> <br />
-            <?php if(isset($_GET['apellidos'])){ ?>
-                <input type="text" name="apellidos_aprendiz" id="apellidos_aprendiz" value="<?php echo $_GET['apellidos']?>" required />
-            <?php }else{ ?>
-                <input type="text" name="apellidos_aprendiz" id="apellidos_aprendiz" placeholder="Apellidos Aprendiz" required />
-            <?php } ?>
-                <input type="text" name="apellidos_instructor" id="apellidos_instructor" placeholder="Apellidos Instructor" required />
+                <br /> <br />
+                <?php if(isset($_GET['apellidos'])){ ?>
+                    <input type="text" name="apellidos_aprendiz" id="apellidos_aprendiz" value="<?php echo $_GET['apellidos']?>" required />
+                <?php }else{ ?>
+                    <input type="text" name="apellidos_aprendiz" id="apellidos_aprendiz" placeholder="Apellidos Aprendiz" required />
+                <?php } ?>
+                    <input type="text" name="apellidos_instructor" id="apellidos_instructor" placeholder="Apellidos Instructor" required />
 
-            <br /><br />
-            <?php if(isset($_GET['numero_ficha'])){ ?>
-                <input type="number" name="ficha_aprendiz" id="ficha_aprendiz" value="<?php echo $_GET['numero_ficha']?>" required />
-            <?php }else{ ?>
-                <input type="number" name="ficha_aprendiz" id="ficha_aprendiz" placeholder="Ficha Aprendiz" required />
-            <?php } ?>
-                <input type="number" name="telefono_instructor" id="telefono_instructor" placeholder="Telefono Instructor" required />
+                <br /><br />
+                <?php if(isset($_GET['numero_ficha'])){ ?>
+                    <input type="number" name="ficha_aprendiz" id="ficha_aprendiz" value="<?php echo $_GET['numero_ficha']?>" required />
+                <?php }else{ ?>
+                    <input type="number" name="ficha_aprendiz" id="ficha_aprendiz" placeholder="Ficha Aprendiz" required />
+                <?php } ?>
+                    <input type="number" name="telefono_instructor" id="telefono_instructor" placeholder="Telefono Instructor" required />
 
-            <br /><br />
+                <br /><br />
 
-            <?php if(isset($_GET['direccion'])){ ?>
-                <input type="text" name="direccion_aprendiz" id="direccion_aprendiz" value="<?php echo $_GET['direccion']?>" required />
-            <?php }else{ ?>
-                <input type="text" name="direccion_aprendiz" id="direccion_aprendiz" placeholder="Dirección - Empresa - Aprendiz" required />
-            <?php } ?>
-                <input type="email" name="correo_instructor" id="correo_instructor" placeholder="Correo Instructor" required />
+                <?php if(isset($_GET['direccion'])){ ?>
+                    <input type="text" name="direccion_aprendiz" id="direccion_aprendiz" value="<?php echo $_GET['direccion']?>" required />
+                <?php }else{ ?>
+                    <input type="text" name="direccion_aprendiz" id="direccion_aprendiz" placeholder="Dirección - Empresa - Aprendiz" required />
+                <?php } ?>
+                    <input type="email" name="correo_instructor" id="correo_instructor" placeholder="Correo Instructor" required />
 
-            <br /><br />
+                <br /><br />
 
-                <input type="submit" value="Enviar" />
-            </form>
-        </div>
+                    <input type="submit" value="Enviar" id="btnSend"/>
+            </div>
+        </form>
+    </section>
 
         <div class="popup">
             <div class="popup-content">
-                <i class="fas fa-times close"></i>
-                <h2>Aprendices Disponibles <i class="fas fa-user-friends"></i></h2> <br />
+            <ion-icon name="close-outline" class="close"></ion-icon>
+                <h2>Aprendices Disponibles</h2> <br />
 
                 <?php
 
@@ -114,8 +115,8 @@
 
         <div class="popup2">
             <div class="popup-content2">
-                <i class="fas fa-times close2"></i>
-                <h2>Instructores Disponibles <i class="fas fa-user-friends"></i></h2> <br />
+                <ion-icon name="close-outline" class="close2"></ion-icon>
+                <h2>Instructores Disponibles<br />
 
                 <?php
 
@@ -148,6 +149,7 @@
         </div>
 
         <script src="js/popup.js"></script>
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
   </html>
 

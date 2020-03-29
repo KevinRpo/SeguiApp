@@ -21,6 +21,9 @@
         <?php require_once './header/header.php'; ?>
         <main>
             <h1>Bienvenido Instructor</h1><br/>
+            <p>
+                Esperamos que nuestra plataforma pueda ser de mucha utlidad <br />para nuestros usuarios.
+            </p>
             <img src="../../assets/images/SeguiApp.png" alt="logo_sena" title="SeguiApp" />
         </main>
     </body>

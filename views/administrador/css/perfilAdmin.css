@@ -1,0 +1,10 @@
+body{
+  background: url("../images/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 140px;
+  padding: 20px;
+}
+  
+h2{
+  text-align: center;
+}

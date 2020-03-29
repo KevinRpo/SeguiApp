@@ -32,6 +32,7 @@
                         <th>Dirección</th>
                         <th>Telefono</th>
                         <th>Nombre - Jefe</th>
+                        <th>Correo - Jefe</th>
                         <th>Identificación - Aprendiz</th>
                     </tr>
                     <tr>
@@ -51,6 +52,7 @@
                         <td><?=$fila['direccion']?></td>
                         <td><?=$fila['telefono']?></td>
                         <td><?=$fila['nombre_jefe']?></td>
+                        <td><?=$fila['correo_jefe']?></td>
                         <td><?=$fila['id_a']?></td>
                     </tr>
                     <?php } ?>

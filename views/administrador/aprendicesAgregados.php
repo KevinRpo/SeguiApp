@@ -23,19 +23,20 @@
     <br />
     <h3>Aprendices Agregados</h3>
     <div class="form">
-        <input type="text" class="input" name="caja_busqueda" id="caja_busqueda" placeholder="Buscar..."/>
-        <label for="caja_busqueda"><i class="fas fa-search"></i></label>
+        <input type="text" name="caja_busqueda" class="fas fa-search" id="caja_busqueda" placeholder="Buscar..."/>
+        <label for="caja_busqueda"></label>
     </div>
     
     <div id="datos"></div>
 
     <br/></br />
     
-    <a href="../administrador/agregarAprendiz" class="add">Agregar Aprendiz <i class="fas fa-user-plus"></i></a>
+    <a href="../administrador/agregarAprendiz" class="add">Agregar Aprendiz <ion-icon class="icon" name="person-add-outline"></ion-icon></a>
 
     <script src="../administrador/js/jquery.min.js"></script>
     <script src="../administrador/js/buscarAprendiz.js"></script>
     <script src="js/confirmarDel.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
   </html>
 

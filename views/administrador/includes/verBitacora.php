@@ -1,13 +1,13 @@
 <?php 
 
     session_start();
-    $id = $_SESSION['aprendiz'];
+    $id = $_SESSION['admin'];
 
     if(!isset($id)){
         header("location:../../index");
     } else {
 
-        include '../../database/conexion.php';
+        include '../../../database/conexion.php';
 
         $sql = "SELECT * FROM tbl_bitacora WHERE id = '". $_GET['id']."'";
   
@@ -18,8 +18,9 @@
                 <h2>No hay archivos que mostrar</h2>
             <?php } else{ 
                 header('content-type: application/pdf');
-                readfile('Bitacoras/'.$fila['nombre']);
+                readfile('../../aprendiz/Bitacoras/'.$fila['nombre']);
             } 
         }
 
     } 
+?>

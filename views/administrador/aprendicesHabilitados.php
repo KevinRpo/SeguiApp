@@ -23,8 +23,8 @@
     <br />
     <h3>Aprendices Habilitados</h3>
     <div class="form">
-        <input type="text" class="input" name="caja_busqueda" id="caja_busqueda" placeholder="Buscar..."/>
-        <label for="caja_busqueda"><i class="fas fa-search"></i></label>
+        <input type="text" class="fas fa-search" name="caja_busqueda" id="caja_busqueda" placeholder="Buscar..."/>
+        <label for="caja_busqueda"></label>
     </div>
     
     <div id="datos"></div>
@@ -32,6 +32,7 @@
     <script src="../administrador/js/jquery.min.js"></script>
     <script src="../administrador/js/aprendicesHabilitados.js"></script>
     <script src="js/confirmarDel.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
   </html>
 

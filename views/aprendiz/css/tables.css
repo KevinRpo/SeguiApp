@@ -1,0 +1,28 @@
+table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 90%;
+    padding: 50px;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #FC7323;
+    color: white;
+  }
+
+  td > a{
+    text-decoration: none;
+    color: red;
+  }
+
+  td > a:hover{
+    text-decoration: none;
+    color: #555;
+  }

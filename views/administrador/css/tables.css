@@ -28,24 +28,6 @@ table td {
   transition: all .5s;
 }
 
-.form{
-  display: flex;
-  width: 65%;
-  padding: 10px;
-  text-align: center;
-  justify-content: center;
-}
-
-.form input{
-  border-radius: 5px;
-  height: 23px;
-  width: 30% ;
-}
-
-.form .input:focus-visible{
-  background: #FC7323;
-}
-
 /* Table Header */
 #titulo {
   background-color: #FC7323;
@@ -99,180 +81,13 @@ table td {
   background-color: #ffcccc;
 }
 
-.eliminar{
-  font-size: 20px;
-  color: red;
-}
-
-.editar{
-  font-size: 20px;
-  color: blue;
-}
-
-.habilitar{
-  font-size: 20px;
-  color: chocolate;
-}
-
-.inhabilitar{
-  font-size: 20px;
-  color: greenyellow;
-}
-
-.add{
-  width: 30%;
-  background: #ddd;
-  text-decoration: none;
-  color: black;
-  padding: 4px;
-  border-radius: 5px;
-}
-
-.form #caja_busqueda{
-  width: 20%;
-}
-
 .form{
-  width: 90%;
+  display: flex;
   justify-content: flex-end;
 }
 
-.form1{
-  padding: 35px;
-  border-radius: 10px;
-  margin: auto;
-  width: 30%;
-  filter: blur(0.4px);
-  box-shadow:
-  /*bottom shadow*/
-  0px 20px 20px rgba(255, 255, 255, 0.1),
-  /* 0px 5px 10px rgba(0,0,0,0.1), */
-  /*long bottom shadow*/
-  /* 0px 70px 50px rgba(0,0,0,0.1), */
-  /*right shadow*/
-  0px 50px 50px rgba(0,0,0,0.1),
-  /*left shadow*/
-  -30px 50px 50px rgba(0,0,0,0.1), 
-  /*right inset*/
-  inset 20px 0px 60px rgba(255, 255, 255, 0.1),
-  /*left inset*/
-  inset -20px 0px 60px rgba(255, 255, 255, 0.1);
-}
-
-.form1 label{
-  display: inline-block;
-  width: 150px;
-}
-
-.form1 input, .form1 select{
-    margin: auto;
-    border-radius: 2px;
-    width: 85%;
-    height: 30px;
-    justify-content: flex-start;
-}
-
-.form1 input[type="submit"]{
-  background-color: #FC7323;
-  cursor: pointer;
+.form #caja_busqueda{
   height: 30px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
-.formulario{
-  width: 90%;
-  height: 60vh;
-  overflow: hidden;
-  padding: 15px;
-}
-
-.formulario input{
-  border-radius: 2px;
-  width: 30%;
-  height: 25px;
-  justify-content: flex-start;
-}
-
-.formulario input[type="submit"]{
-  background-color: #FC7323;
-  cursor: pointer;
-  height: 30px;
-  border-radius: 5px;
-}
-
-.formulario i{
-  font-size: 25px;
-  cursor: pointer;
-}
-
-.popup{
-  background: rgba(0,0,0,0.6);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: -25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-
-.popup-content{
-  height: 400px;
-  width: 950px;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-}
-
-.close{
-  position: absolute;
-  font-size: 30px;
-  top: 5px;
-  color: red;
-  right: 14px;
-  padding: 5px;
-  cursor: pointer;
-}
-
-
-.popup2{
-  background: rgba(0,0,0,0.6);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: -25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-
-.popup-content2{
-  height: 400px;
-  width: 950px;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-}
-
-.close2{
-  position: absolute;
-  font-size: 30px;
-  top: 5px;
-  color: red;
-  right: 14px;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.popup .popup-content table .listar{
-  color: red;
-  text-decoration: none;
-}
-
-.popup .popup-content table .listar:hover{
-  color: black;
-}

@@ -83,3 +83,17 @@ function validar() {
     }
     
 }
+
+function validarClave(){
+    clave = document.getElementById('pass').value;
+    confirmarClave = document.getElementById('pass_confirm').value;
+
+    if(clave != confirmarClave){
+        Swal.fire(
+            'Ups!',
+            'Las contraseñas no coinciden',
+            'error'
+        )
+        return false;
+    }
+}

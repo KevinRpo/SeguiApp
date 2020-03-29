@@ -16,6 +16,7 @@
         <link rel="icon" href="../../assets/images/seguiapp.ico" />
         <link rel="stylesheet" href="../../assets/icons/css/all.min.css" />
         <link rel="stylesheet" href="css/estilos.css" />
+        <link rel="stylesheet" href="css/tables.css" />
         <title>SeguiApp</title>
     </head>
     <body>
@@ -62,8 +63,9 @@
         </center>
 
         <br /><br />
-        <a href="enviarMensaje" class="enviar">Enviar Mensaje <i class="fas fa-envelope"></i></a>
+        <a href="enviarMensaje" class="enviar">Enviar Mensaje <ion-icon class="mensaje" name="mail-outline"></ion-icon></a>
 
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     </body>
     </html>
 

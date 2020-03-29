@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../../assets/images/seguiapp.ico" />
         <link rel="stylesheet" href="../../assets/icons/css/all.min.css" />
-        <link rel="stylesheet" href="css/estilos.css" />
+        <link rel="stylesheet" href="css/tables.css" />
         <title>SeguiApp</title>
     </head>
     <body>

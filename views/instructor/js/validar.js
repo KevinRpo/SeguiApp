@@ -1,5 +1,5 @@
 function validar() {
-    var id, nombre, apellidos, email, tel, clave, confirmarClave, expresion;
+    var nombre, apellidos, email, tel, clave, confirmarClave, expresion;
     nombre = document.getElementById('nombre').value;
     apellidos = document.getElementById('apellidos').value;
     email = document.getElementById('email').value;

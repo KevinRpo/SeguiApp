@@ -1,42 +1,85 @@
-
+<html>
+  <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <link rel="stylesheet" href="./css/estilos.css" />
+    <link rel="stylesheet" href="./css/estilos.css" />  
+  </head>
+  <body><div class="area"></div><nav class="main-menu">
+            <ul>
+                <li class="has-subnav">
+                    <a href="../aprendiz/aprendiz">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Inicio
+                        </span>
+                    </a>
+                </li> 
+                <li class="has-subnav">
+                    <a href="../aprendiz/datosEmpresa">
+                       <i class="fas fa-building fa-2x"></i>
+                        <span class="nav-text">
+                            Datos Empresa
+                        </span>
+                    </a>    
+                </li>
+                <?php 
+                    include '../../database/conexion.php';
 
-    <nav class="menu1">
-    <h2>Seguimiento Aprendiz - SENA</h2>
-        <ul>
-            <li>|<a href="../aprendiz/perfilAprendiz"><i class="fas fa-user" title="Perfil"></i></a></li> 
-            <li><a href="../aprendiz/aprendiz"><i class="fas fa-home" title="Inicio"></i></a></li>
-            <li><a href="../../includes/cerrarSesion.php"><i class="fas fa-power-off" title="Salir"></i></a></li>
-        </ul>
-    </nav>
+                    if(!isset($_SESSION)) {session_start();} else{
 
-  <header>
-    <input type="checkbox" id="btn-menu" />
-    <label for="btn-menu"><i class="fa fa-bars"></i></label>
-    <nav class="menu">
-        <ul>
-        <li><a href="../aprendiz/datosEmpresa">Datos Empresa</a></li>
-    
-        <?php 
-            include '../../database/conexion.php';
+                    
+                    $id = $_SESSION['aprendiz'];
 
-            if(!isset($_SESSION)) {session_start();} else{
+                    $notificacion = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_a = '$id' AND leido = 0" );
 
-            
-            $id = $_SESSION['aprendiz'];
-
-            $notificacion = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_a = '$id' AND leido = 0" );
-
-            $num = mysqli_num_rows($notificacion);
+                    $num = mysqli_num_rows($notificacion);
 
             }
         ?>
-        <li><a href="../aprendiz/notificaciones">Visitas<i class="fas fa-bell notificacion"></i><b>
-  
-            <?php echo $num ?></b></a></li>
-        <li><a href="../aprendiz/subirBitacoras">Bitácoras</a></li>
-        </ul>
-    </nav>
-  </header>
-  
+                <li class="has-subnav">
+                    <a href="../aprendiz/notificaciones">
+                      <i class="fas fa-bell fa-2x"><span class="notificacion"><?php echo $num ?></i></span>
+                        <span class="nav-text">
+                            Notificaciones
+                        </span>
+                    </a>
+                </li>
+                <li class="has-subnav">
+                    <a href="../aprendiz/addBitacora">
+                      <i class="fas fa-upload fa-2x"></i>
+                        <span class="nav-text">
+                            Subir Bitácora
+                        </span>
+                    </a>
+                </li>
+                <li class="has-subnav">
+                    <a href="../aprendiz/subirBitacoras">
+                      <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">
+                            Bitácoras
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="logout">
+            <li>
+                    <a href="../aprendiz/perfilAprendiz">
+                        <i class="fa fa-user fa-2x"></i>
+                        <span class="nav-text">
+                            Perfil
+                        </span>
+                    </a>
+                  
+                </li>
+                <li>
+                   <a href="../../includes/cerrarSesion.php">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Cerrar Sesión
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+  </body>
+</html>

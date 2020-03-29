@@ -57,8 +57,9 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = "Visita al Aprendiz";
-    $mail->Body    = "Cordial saludo, se le informa que el día ".$fecha." con hora ".$hora." el instructor ".$row['nombres']. "" .$row['apellidos']." \n\n";
+    $mail->Body  = "Cordial saludo, se le informa que el día ".$fecha." con hora ".$hora." el instructor ".$row['nombres']. " " .$row['apellidos']." \n\n";
     $mail->Body .= "con dirección de correo electrónico ".$row['email']." y número de teléfono ".$row['telefono']."\n\n";
+    $mail->Body .= "realizará la visita al aprendiz para llevar a cabo un debido proceso.";
     $mail->CharSet = 'utf-8';
     $mail->send();
 } catch (Exception $e) {

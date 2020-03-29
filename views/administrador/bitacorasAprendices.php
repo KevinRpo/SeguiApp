@@ -41,16 +41,18 @@
                         while ($fila = mysqli_fetch_assoc($resultado)) {
                             
                         ?>
-                        <td><a href="verBitacora?id=<?=$fila['id']?>"><?=$fila['nombre']?></a></td>
+                        <td><a href="includes/verBitacora?id=<?=$fila['id']?>"><?=$fila['nombre']?></a></td>
                         <td><?=$fila['fecha']?></td>
                         <td><?=$fila['id_a']?></td>
-                        <td><a href="includes/eliminarBitacora.php?id=<?=$fila['id']?>"><i class="fas fa-trash del" title="Eliminar"></i></a>
+                        <td><a href="includes/eliminarBitacora.php?id=<?=$fila['id']?>"><ion-icon name='trash-outline' class='eliminar' title='Eliminar' id='confirm'></ion-icon></a>
                         </td>
                     </tr>
                     <?php } ?>
                 </table>
             </center>
         </main>
+        
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     </body>
     </html>  
 

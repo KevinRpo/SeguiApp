@@ -20,7 +20,10 @@
     <body>
         <?php require_once ('./header/header.php'); ?>
         <main>
-            <h1>Bienvenido Administrador SEGUIAPP</h1> <br />
+            <h1>BIENVENIDO ADMINISTRADOR SEGUIAPP</h1> <br />
+            <p>
+                Esperamos que nuestra plataforma pueda ser de mucha utlidad <br />para nuestros usuarios.
+            </p>
             <img src="../../assets/images/SeguiApp.png" alt="logo_sena" title="SeguiApp" />
         </main>
         <script src="../administrador/js/js.js"></script>

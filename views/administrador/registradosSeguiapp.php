@@ -19,15 +19,14 @@
   </head>
   <body>
     <?php require_once ('./header/header.php'); ?>
- 
-    <br />
-    <h3>Registrados en SeguiApp</h3>
+
+     <h3>Registrados en SeguiApp</h3>
     <div class="form">
-      <input type="text" class="input" name="caja_busqueda" id="caja_busqueda" placeholder="Buscar..." />
-      <label for="caja_busqueda"><i class="fas fa-search"></i></label>
+      <label for="caja_busqueda"></label>
+      <input type="search" name="caja_busqueda" id="caja_busqueda" class="fas fa-search" placeholder="Buscar..." />
     </div>
     
-    <div id="datos"></div>
+      <div id="datos"></div>
 
       <script src="../administrador/js/jquery.min.js"></script>
       <script src="../administrador/js/buscar.js"></script>

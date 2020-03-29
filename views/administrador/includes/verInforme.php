@@ -7,7 +7,7 @@
         header("location:../../index");
     } else {
 
-        include '../../database/conexion.php';
+        include '../../../database/conexion.php';
 
         $sql = "SELECT * FROM tbl_informe WHERE id_informe = '". $_GET['id_informe']."'";
   
@@ -18,8 +18,9 @@
                 <h2>No hay archivos que mostrar</h2>
             <?php } else{ 
                 header('content-type: application/pdf');
-                readfile('../instructor/informes/'.$fila['archivo']);
+                readfile('../../instructor/informes/'.$fila['archivo']);
             } 
         }
 
     } 
+?>
