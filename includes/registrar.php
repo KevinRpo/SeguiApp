@@ -12,11 +12,11 @@ $clave = $_POST['clave'];
 $confirmarClave = $_POST['confirmarClave'];
 $estatus = 1;
 
-// $hash = password_hash($clave, PASSWORD_BCRYPT, ['cost' => 4]);
-// $hash2 = password_hash($confirmarClave, PASSWORD_BCRYPT, ['cost' => 4]);
+$hash = password_hash($clave, PASSWORD_BCRYPT, ['cost' => 4]);
+$hash2 = password_hash($confirmarClave, PASSWORD_BCRYPT, ['cost' => 4]);
 
 $sql = "INSERT INTO tbl_registros(id, nombre, apellidos, email, telefono, rol, clave, confirmarClave, estatus, fecha) 
-        VALUES ('$id', '$nombre', '$apellidos', '$email', '$telefono', '$rol', '$clave', '$confirmarClave', '$estatus', CURDATE())";
+        VALUES ('$id', '$nombre', '$apellidos', '$email', '$telefono', '$rol', '$hash', '$hash2', '$estatus', CURDATE())";
 
 $verificar_usuario = mysqli_query($conexion, "SELECT * FROM tbl_registros WHERE id = '$id'");
 if(mysqli_num_rows($verificar_usuario) > 0){

@@ -4,6 +4,17 @@ table {
     width: 90%;
     padding: 50px;
   }
+
+.table2{
+  margin-left: 55%;
+}
+  
+  .table2{
+    text-align: center;
+    border-collapse: collapse;
+    width: 35%;
+    padding: 50px;
+  }
   
   th, td {
     text-align: center;

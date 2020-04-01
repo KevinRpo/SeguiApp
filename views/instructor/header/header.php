@@ -60,10 +60,18 @@
                     </a>
                 </li>
                 <li class="has-subnav">
+                    <a href="../instructor/visitasRealizadas">
+                      <i class="fas fa-check-circle fa-2x"></i>
+                        <span class="nav-text">
+                            Visitas Realizadas
+                        </span>
+                    </a>
+                </li>
+                <li class="has-subnav">
                     <a href="../instructor/mapa">
                       <i class="fas fa-route fa-2x"></i>
                         <span class="nav-text">
-                            Mapa
+                            Mapa y/o Rutas
                         </span>
                     </a>
                 </li>

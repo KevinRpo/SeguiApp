@@ -12,7 +12,7 @@ if(isset($_POST['enviar'])){
 
     $email = $_REQUEST['email'];
 
-    $sql = "SELECT nombre, email FROM tbl_registros WHERE email = '$email'"; 
+    $sql = "SELECT id, nombre, email FROM tbl_registros WHERE email = '$email'"; 
     $result = mysqli_query($conexion, $sql)or die (mysqli_error($conexion));
     $row = mysqli_fetch_array($result);
 
@@ -41,8 +41,10 @@ if(isset($_POST['enviar'])){
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = "Recuperar Clave";
-        $mail->Body    = "Hola " . $row['nombre'] . " , haz solictado cambiar tu contraseña, ingresa al siguiente link\n\n";
-        $mail->Body .= "http://localhost/SeguiApp/views/nuevaClave.php?user=".$row['nombre']."&token=".$token."\n\n";
+        $mail->Body    = "Hola " . $row['nombre'] . " , haz solictado cambiar tu contraseña, ingresa al siguiente link<br /><br />";
+        $mail->Body .= "http://localhost/SeguiApp/views/nuevaClave.php?user=".$row['id']."&token=".$token."<br /><br />";
+        $mail->Body .= "**********************NO RESPONDER - Mensaje Generado Automáticamente********************** <br /><br />
+        Este correo es únicamente informativo y es de uso exclusivo del destinatario(a), puede contener información privilegiada y/o confidencial. Si no es usted el destinatario(a) deberá borrarlo inmediatamente. Queda notificado que el mal uso, divulgación no autorizada, alteración y/o  modificación malintencionada sobre este mensaje y sus anexos quedan estrictamente prohibidos y pueden ser legalmente sancionados. -SeguiApp  no asume ninguna responsabilidad por estas circunstancias.";
         $mail->CharSet = 'utf-8';
         $mail->send();
         

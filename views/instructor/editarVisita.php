@@ -43,6 +43,7 @@
         <form action="includes/editarVisita.php" method="POST" class="form_contact" />
             <h2>Cambiar Fecha</h2> 
             <div class="user_info">
+                <input type="hidden" name="txtid" id="id" value="<?php echo $fila['id_citacion'] ?>" />
                 <label for="date">Fecha</label> 
                 <input type="date" name="date" id="date" value="<?php echo $fila['fecha'] ?>" />
 

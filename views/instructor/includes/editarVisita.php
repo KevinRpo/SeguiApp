@@ -2,15 +2,14 @@
 
 include '../../../database/conexion.php';
 
-session_start();
-$id = $_SESSION['instructor'];
+$id = $_POST['txtid'];
 $date = $_POST['date'];
 $hour = $_POST['hour'];
 $message = $_POST['message'];
 
 if ($date != null || $hour != null || $message != null) {
     $sql2 = "UPDATE tbl_citacion SET fecha = '".$date."', hora = '".$hour."', mensaje = '".$message."'
-    WHERE id_instructor = '".$id."'";
+    WHERE id_citacion = '".$id."'";
 
     mysqli_query($conexion, $sql2);
     if ($sql2) {

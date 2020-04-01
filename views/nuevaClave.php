@@ -17,7 +17,7 @@
             $user = $_GET['user'];
             $token = $_GET['token'];
 
-            $sql = mysqli_query($conexion, "SELECT token FROM tbl_registros WHERE nombre = '$user'");
+            $sql = mysqli_query($conexion, "SELECT token FROM tbl_registros WHERE id = '$user'");
             $row = mysqli_fetch_array($sql);
 
             if($row['token'] == $token){
@@ -31,7 +31,7 @@
                 $clave = $_POST['pass'];
                 $clave_confirm = $_POST['pass_confirm'];
 
-                $sql = "UPDATE tbl_registros SET clave = '$clave', confirmarClave = '$clave_confirm', token = '' WHERE nombre = '$user'"; 
+                $sql = "UPDATE tbl_registros SET clave = '$clave', confirmarClave = '$clave_confirm', token = '' WHERE id = '$user'"; 
 
                 $act = mysqli_query($conexion, $sql);
 
