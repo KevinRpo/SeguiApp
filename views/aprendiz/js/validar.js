@@ -7,6 +7,7 @@ function validar() {
     clave = document.getElementById('clave').value;
     confirmarClave = document.getElementById('confirmar_clave').value;
 
+    //Expresión regular 
     expresion = /\w+@\w+\.+[a-z]/;
 
     if(nombre === "" || apellidos === "" || email === "" || tel === "" || clave === "" || confirmarClave === ""){

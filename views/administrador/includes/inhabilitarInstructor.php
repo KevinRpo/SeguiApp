@@ -2,9 +2,9 @@
 
 include '../../../database/conexion.php';
 
-$id = $_GET['id_instructor'];
+$id = $_GET['id'];
 
-$sql = "UPDATE tbl_instructor set estatus = 0 WHERE id_instructor = '".$id."'";
+$sql = "UPDATE tbl_registros set estatus = 0 WHERE id = '".$id."'";
 
 mysqli_query($conexion, $sql);
 

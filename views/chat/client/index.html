@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/SeguiApp.ico" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>SeguiApp</title>
+</head>
+<body>
+    <div class="contenedor">
+        <a href="http://localhost/seguiapp/views/administrador/administrador">Administrador</a> <br />
+        <a href="http://localhost/seguiapp/views/aprendiz/aprendiz">Aprendiz</a>
+    </div>
+
+    <h1>Bienvenidos a nuestro chat!</h1>
+
+    <!-- Contenedor pirncipal -->
+    <div class="container">
+        <div id="messages"></div>
+
+        <!-- Formulario para el envio de mensajes -->
+        <form onsubmit="return addMessage(this);">
+            <input type="number" id="id" placeholder="Identificación" maxlength="11" required/> <br />
+            <textarea id="text" cols="70" rows="2" placeholder="Mensaje"  maxlength="100" required></textarea> <br />
+            <input type="submit" value="Enviar" />
+        </form>
+    </div>
+    
+
+</body>
+</html>

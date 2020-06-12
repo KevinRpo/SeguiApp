@@ -13,9 +13,10 @@
     <body>
         <div class="cont">
         <div class="form sign-in">
-            <img src="assets/images/SeguiApp.png" alt="logotipo_seguiapp" class="logotipo_seguiapp">
+            <a href="/seguiapp"><img src="assets/images/SeguiApp.png" alt="logotipo_seguiapp" class="logotipo_seguiapp"></a>
             <h1>Bienvenidos!</h1>
             <form action="./includes/validarLogin.php" method="POST">
+            <!-- Registro login -->
                 <label>
                 <span>IDENTIFICACIÓN</span>
                 <input type="number" name="id" autocomplete="off" required />
@@ -31,6 +32,7 @@
                     <br />
                 <input type="submit" class="submit" value="Iniciar Sesión" />
             </form>
+            <!-- Pie de página -->
             <footer>
                 <p>
                     SeguiApp - proyectsena50@gmail.com &copy <?= date('Y') ?>
@@ -38,6 +40,7 @@
             </footer>
         </div>
         <div class="sub-cont">
+        <!-- Imagen -->
             <div class="img">
             <div class="img__text m--up">
                 <h2>¿Qué es SeguiApp?</h2>
@@ -51,11 +54,13 @@
                 <p>Si ya tienes cuenta sólo ingresa a nuestra plataforma SeguiApp.</p>
             </div>
             <div class="img__btn">
+            <!-- Botones imagen -->
                 <span class="m--up">REGISTRO</span>
                 <span class="m--in">INGRESAR</span>
             </div>
             </div>
             <div class="form2 sign-up">
+            <!-- Formulario de registro -->
             <h2>Registro SeguiApp</h2> <br />
                 <form action="includes/registrar.php" method="POST" onsubmit="return validar();">
                     <label>
@@ -101,6 +106,7 @@
         </div>
         </div>
 
+    <!-- LLamamos archivos tipo JS-->
     <script src="assets/js/main.js"></script> 
     <script src="assets/js/verClave.js"></script> 
     </body>

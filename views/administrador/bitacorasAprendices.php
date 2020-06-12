@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -52,6 +53,7 @@
             </center>
         </main>
         
+        <!-- https://ionicons.com/ -->
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     </body>
     </html>  

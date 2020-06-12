@@ -5,6 +5,7 @@
   font-family: sans-serif;
 }
 
+/* Estilos del mensaje de respuesta */
   .enviar-mensaje{
     text-decoration: none;
     color: red;
@@ -26,6 +27,7 @@
     margin-left: 75%;
   } 
 
+/* Importamos los iconos y fuentes */
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
@@ -36,7 +38,8 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-  
+
+/* Contenedores principales */
 main{
   text-align: center;
   padding: 30px;
@@ -49,11 +52,11 @@ main img{
   opacity: 0.8;
 } 
 
-
+/* Estilos iconos */
 .fa-2x {
   font-size: 2em;
 }
-.fa, .fas {
+.fa, .fas, .far {
   position: relative;
   display: table-cell;
   width: 60px;
@@ -177,6 +180,7 @@ nav ul,nav li {
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
+/* Estilos notificación */
 .notificacion{
   position: absolute;
   margin-top: -8%;

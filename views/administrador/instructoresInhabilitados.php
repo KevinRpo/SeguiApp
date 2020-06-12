@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index 
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
     ?>
@@ -18,6 +19,7 @@
         <title>SeguiApp</title>
     </head>
     <body>
+        <!-- Requerimos la cabecera -->
         <?php require_once ('./header/header.php'); ?>
     
         <br />
@@ -29,6 +31,7 @@
         
         <div id="datos"></div>
 
+        <!-- Archivos de tipo JS -->
         <script src="../administrador/js/jquery.min.js"></script>
         <script src="../administrador/js/instructoresInhabilitados.js"></script>
         <script src="js/confirmarDel.js"></script>

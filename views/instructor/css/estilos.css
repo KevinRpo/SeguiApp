@@ -1,3 +1,4 @@
+/* Importamos los iconos y las fuentes */
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
@@ -21,7 +22,7 @@ main img{
   opacity: 0.8;
 } 
 
-
+/* Estilos de los iconos */
 .fa-2x {
   font-size: 2em;
 }
@@ -147,6 +148,7 @@ nav ul,nav li {
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
+/* Estilos de las notificaciones */
 .notificacion{
   position: absolute;
   margin-top: -8%;

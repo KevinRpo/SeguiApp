@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['aprendiz'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
     ?>
 
@@ -42,6 +43,7 @@
                         while ($fila = mysqli_fetch_assoc($resultado)) {
                             
                         ?>
+                        <!-- Links para ver o eliminar Bitácoras -->
                         <td><a href="includes/ver?id=<?=$fila['id']?>"><?=$fila['nombre']?></a></td>
                         <td><?=$fila['fecha']?></td>
                         <td><a href="includes/eliminarBitacora.php?id=<?=$fila['id']?>">Eliminar</a></td>

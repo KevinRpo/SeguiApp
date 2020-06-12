@@ -68,7 +68,7 @@ input, button {
   transition: transform 1.2s ease-in-out;
 }
 .cont.s--signup .sub-cont {
-          transform: translate3d(-640px, 0, 0);
+  transform: translate3d(-640px, 0, 0);
 }
 
 input[type="submit"]{
@@ -280,6 +280,7 @@ input, select {
   height: 100px;
   margin-top: -24%;
   padding: 5px;
+  cursor: pointer;
 }
 
 footer p{

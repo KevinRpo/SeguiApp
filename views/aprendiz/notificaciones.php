@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['aprendiz'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -38,6 +39,7 @@
             <?php 
                     include '../../database/conexion.php';
 
+                    //Consultamos datos de la notificación para visualizar 
                     $sql = mysqli_query($conexion, "SELECT * FROM tbl_citacion AS ci INNER JOIN tbl_instructor AS ins
                     ON ci.id_instructor = ins.id_instructor WHERE id_a = '$id' ORDER BY id_citacion DESC");
 
@@ -51,9 +53,11 @@
                             <td><?=$fila['mensaje']?></td>
                             
                             <td>
+                            <!-- Si el valor del campo es cero mostramos "Leido" -->
                             <?php if($fila['leido'] == 0){ ?>
                                 <a  href="includes/leido.php?id_citacion=<?=$fila['id_citacion']?>">Leído</a>
                             <?php } else{?>
+                            <!-- De lo contrario mostramos "No leido" -->
                                 <a href="includes/Noleido.php?id_citacion=<?=$fila['id_citacion']?>">No leído</a>
                             <?php } ?>
                             </td>

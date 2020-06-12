@@ -1,3 +1,4 @@
+//Confirmación para eliminar un registro 
 $("#confirm").click(function(){
   var bool=confirm("¿Está seguro de eliminar el registro?");
   if(bool){

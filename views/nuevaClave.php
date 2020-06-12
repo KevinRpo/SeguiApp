@@ -10,6 +10,8 @@
         <script src="../assets/js/validarRegistro.js"></script>
     </head>
     <body>
+
+        <!-- Comprobar que GET exista-->
         <?php if(isset($_GET['user']) && isset($_GET['token'])){
 
             require_once '../database/conexion.php';
@@ -17,9 +19,11 @@
             $user = $_GET['user'];
             $token = $_GET['token'];
 
+            //Consulta para buscar el usuario en la base de datos
             $sql = mysqli_query($conexion, "SELECT token FROM tbl_registros WHERE id = '$user'");
             $row = mysqli_fetch_array($sql);
 
+            //Buscar el atributo token en la tabla
             if($row['token'] == $token){
 
         ?>
@@ -28,10 +32,15 @@
                 
                 require_once '../database/conexion.php';
 
+                //Recibir datos dell formulario
                 $clave = $_POST['pass'];
                 $clave_confirm = $_POST['pass_confirm'];
 
-                $sql = "UPDATE tbl_registros SET clave = '$clave', confirmarClave = '$clave_confirm', token = '' WHERE id = '$user'"; 
+                //Encriptar contraseñas
+                $hash = password_hash($clave, PASSWORD_BCRYPT, ['cost' => 4]);
+                $hash2 = password_hash($clave_confirm, PASSWORD_BCRYPT, ['cost' => 4]);
+
+                $sql = "UPDATE tbl_registros SET clave = '$hash', confirmarClave = '$hash2', token = '' WHERE id = '$user'"; 
 
                 $act = mysqli_query($conexion, $sql);
 

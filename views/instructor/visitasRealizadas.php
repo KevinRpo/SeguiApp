@@ -3,7 +3,7 @@
     $id = $_SESSION['instructor'];
 
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -27,14 +27,15 @@
             <table>
                 <tr>
                     <th>Fecha - Visita</th>
-                    <th>Hora - Vista</th>
+                    <th>Hora - Visita</th>
                     <th>Identificación - Aprendiz</th>
                 </tr>
                 <tr>
             <?php 
                     include '../../database/conexion.php';
 
-                    $sql = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_instructor = '$id' AND fecha < CURDATE() ORDER BY id_citacion DESC");
+                    $sql = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_instructor = '$id'
+                    AND fecha < CURDATE() ORDER BY id_citacion DESC");
 
                         while ($fila = mysqli_fetch_assoc($sql)) {
                             
@@ -58,7 +59,7 @@
                     include '../../database/conexion.php';
 
                         $sql = mysqli_query($conexion, "SELECT id_a, COUNT(id_a) AS total FROM tbl_citacion 
-                        GROUP BY id_a");
+                         WHERE id_instructor = '$id' AND fecha < CURDATE() GROUP BY id_a");
 
                         while ($row = mysqli_fetch_assoc($sql)) {
                             

@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['instructor'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -35,6 +36,7 @@
                     
                      include '../../database/conexion.php';
 
+                        //Mostramos datos de los aprendices asignados al instructor que haya ingresado
                         $sql = "SELECT * FROM tbl_asignar_aprendiz AS asig INNER JOIN tbl_empresa AS em
                         ON asig.id_aprendiz = em.id_a WHERE id_instructor = '$id'";
 

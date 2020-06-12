@@ -1,5 +1,6 @@
 <?php
 
+//Incluir y usar las librerias PHPMailer
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -40,22 +41,22 @@ if(!$resultado){
         $mail = new PHPMailer(true);
 
 try {
-    //Server settings
-    $mail->SMTPDebug = 0;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'projectsena50@gmail.com';                     // SMTP username
-    $mail->Password   = 'proyectosena123';                               // SMTP password
-    $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    //Configuración del servidor
+    $mail->SMTPDebug = 0;                               // Habilitar salida de depuración detallada
+    $mail->isSMTP();                                    // Enviar usando SMTP
+    $mail->Host       = 'smtp.gmail.com';               // Configuración del servidor SMTP para envio a través de gmail
+    $mail->SMTPAuth   = true;                           // Habilitar autenticación SMTP
+    $mail->Username   = 'projectsena50@gmail.com';      // Dirección de correo electrónico del emisor
+    $mail->Password   = 'proyectosena123';              // Contraseña email emisor
+    $mail->SMTPSecure = 'tls';                          // Habilitar cifrado tls
+    $mail->Port       = 587;                            // Puerto TCP para conexión
 
-    //Recipients
+    //Recipientes
     $mail->setFrom('projectsena50@gmail.com', 'SeguiApp');
-    $mail->addAddress($correo_jefe);     // Add a recipient
+    $mail->addAddress($correo_jefe);                    // Agregar destino de envío
 
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
+    // Contenido
+    $mail->isHTML(true);                                // Establecer formato de HTML
     $mail->Subject = "Visita al Aprendiz";
     $mail->Body  = "Cordial saludo, se le informa que el día ".$fecha." con hora ".$hora." el instructor ".$row['nombres']. " " .$row['apellidos']." \n\n";
     $mail->Body .= "con dirección de correo electrónico ".$row['email']." y número de teléfono ".$row['telefono']."\n\n";
@@ -63,7 +64,7 @@ try {
     $mail->CharSet = 'utf-8';
     $mail->send();
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "El mensaje no pudo ser enviado: {$mail->ErrorInfo}";
 }
         echo '
         <script>

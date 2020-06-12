@@ -2,15 +2,17 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
         include '../../database/conexion.php';
 
-        $id = $_GET['id_instructor'];
+        //Consultamos los datos del id que viene por GET
+        $id = $_GET['id'];
 
-        $sql = "SELECT * FROM tbl_instructor WHERE id_instructor = '".$id."'";
+        $sql = "SELECT * FROM tbl_registros WHERE id = '".$id."'";
 
         $resultado = mysqli_query($conexion, $sql);
 
@@ -25,6 +27,8 @@
       <link rel="icon" href="../../assets/images/seguiapp.ico" />
       <link rel="stylesheet" href="../../assets/icons/css/all.min.css" />
       <link rel="stylesheet" href="./css/formularios.css" />
+      <script src="js/sweetalert2@9.js"></script>
+      <script src="js/validar.js"></script>
       <title>SeguiApp</title>
   </head>
   <body>
@@ -36,12 +40,12 @@
                 <h2>SeguiApp<br>SENA</h2>
             </section>
         </section>
-        <form action="../administrador/includes/editarInstructor.php" method="POST" class="form_contact" >
+        <form action="../administrador/includes/editarInstructor.php" method="POST" class="form_contact">
             <h2>Actualizar Datos Instructor</h2> 
             <div class="user_info">
-                <input type="hidden" name="txtid" id="id" value="<?php echo $fila['id_instructor'] ?>" />
+                <input type="hidden" name="txtid" id="id" value="<?php echo $fila['id'] ?>" />
                 <label for="txtnombre">Nombre</label>
-                <input type="text" name="txtnombre" id="nombre" value="<?php echo $fila['nombres'] ?>" /> 
+                <input type="text" name="txtnombre" id="nombre" value="<?php echo $fila['nombre'] ?>" /> 
                 <label for="txtapellidos">Apellidos</label>
                 <input type="text" name="txtapellidos" id="apellidos" value="<?php echo $fila['apellidos'] ?>" />
                 <label for="txtemail">Email</label>
@@ -54,8 +58,6 @@
                     <option value="instructor">Instructor</option>
                 </select> 
 
-                <label for="txtprograma">Programa</label>
-                <input type="text" name="txtprograma" id="programa" value="<?php echo $fila['programa'] ?>" />
                 <input type="submit" value="Actualizar" />
             </div>
         </form>

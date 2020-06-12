@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>

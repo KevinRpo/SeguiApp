@@ -2,11 +2,12 @@
     session_start();
     $id = $_SESSION['instructor'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
         include '../../database/conexion.php';
-
+        
         $sql = mysqli_query($conexion, "SELECT id_aprendiz FROM tbl_asignar_aprendiz WHERE id_instructor = '$id'");
 
 ?>
@@ -18,6 +19,8 @@
         <link rel="icon" href="../../assets/images/seguiapp.ico" />
         <link rel="stylesheet" href="../../assets/icons/css/all.min.css" />
         <link rel="stylesheet" href="css/formularios.css" />
+        <script src="js/sweetalert2@9.js"></script>
+        <script src="js/validarDos.js"></script>
         <title>SeguiApp</title>
     </head>
     <body>
@@ -28,17 +31,18 @@
                     <h2>SeguiApp<br>SENA</h2>
                 </section>
             </section>
-                <form action="includes/agendarCita.php" method="POST" class="form_contact">
+                <form action="includes/agendarCita.php" method="POST" class="form_contact" onsubmit="return validar();">
                     <h2>Agendar Visita</h2>
                     <div class="user_info">
                         <label for="fecha">Fecha</label>
                         <input type="date" name="fecha" id="fecha" required />
 
                         <label for="hora">Hora</label>
-                        <input type="time" name="hora" id="hora"  required />
+                        <input type="time" name="hora" id="hora" required />
 
                         <label for="id_a">Identificación - Aprendiz</label>
                         <select id="id_a" name="id_a">
+                        <!-- Recorremos en un bucle los identificadores de los aprendices asginados -->
                             <?php
                                 foreach($sql as $id) {
                                     echo "<option value='".$id['id_aprendiz']."'>".$id['id_aprendiz']."</option>";

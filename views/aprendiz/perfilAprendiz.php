@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['aprendiz'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
         $id = $_POST['id'];
     } else {
 

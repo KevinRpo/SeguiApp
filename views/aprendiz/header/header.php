@@ -24,13 +24,15 @@
                 <?php 
                     include '../../database/conexion.php';
 
+                    //Comprobamos que la sesión exista
                     if(!isset($_SESSION)) {session_start();} else{
 
-                    
                     $id = $_SESSION['aprendiz'];
 
+                    //Consultamos el total de notificaciones que tiene x instructor
                     $notificacion = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_a = '$id' AND leido = 0" );
 
+                    //Mostramos de forma numérica el total de notificaciones
                     $num = mysqli_num_rows($notificacion);
 
             }
@@ -56,6 +58,14 @@
                       <i class="fa fa-folder-open fa-2x"></i>
                         <span class="nav-text">
                             Bitácoras
+                        </span>
+                    </a>
+                </li>
+                <li class="has-subnav">
+                    <a href="http://localhost:6677">
+                      <i class="far fa-comment-dots fa-2x"></i>
+                        <span class="nav-text">
+                            Chat
                         </span>
                     </a>
                 </li>

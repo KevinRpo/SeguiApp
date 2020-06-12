@@ -2,13 +2,15 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
         $id = $_POST['id'];
     } else {
 
         include '../../database/conexion.php';
 
+        //Consultamos datos del id de la sesión
         $sql = "SELECT * FROM tbl_registros WHERE id = '".$id."'";
 
         $resultado = mysqli_query($conexion, $sql);

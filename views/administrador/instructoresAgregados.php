@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -32,6 +33,7 @@
     <br /><br />
     <a href="../administrador/agregarInstructor" class="add">Agregar Instructor <ion-icon class="icon" name="person-add-outline"></ion-icon></a>
     
+    <!-- Incluimos archivos de tipo JS -->
     <script src="../administrador/js/jquery.min.js"></script>
     <script src="../administrador/js/buscarInstructor.js"></script>
     <script src="js/confirmarDel.js"></script>

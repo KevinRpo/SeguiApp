@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['instructor'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -36,6 +37,7 @@
             <?php 
                     include '../../database/conexion.php';
 
+                    //Consultar mensajes de X aprendiz a X intructor
                     $sql = mysqli_query($conexion, "SELECT * FROM tbl_mensaje AS me INNER JOIN tbl_aprendiz AS ap
                     ON me.id_aprendiz = ap.id_a WHERE id_instructor = '$id' ORDER BY id_mensaje DESC");
 
@@ -50,7 +52,7 @@
                             <td>
                             <?php if($fila['leido'] == 0){ ?>
                                 <a  href="includes/leido.php?id_mensaje=<?=$fila['id_mensaje']?>">Leído</a>
-                            <?php } else{?>
+                            <?php } else{ ?>
                                 <a href="includes/Noleido.php?id_mensaje=<?=$fila['id_mensaje']?>">No leído</a>
                             <?php } ?>
                             </td>

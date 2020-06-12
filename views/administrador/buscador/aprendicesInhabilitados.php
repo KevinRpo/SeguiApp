@@ -1,4 +1,5 @@
 <?php
+	//Conexión a base de datos
 	$servername = "localhost";
     $username = "root";
   	$password = "";
@@ -12,17 +13,21 @@
 
     $salida = "";
 
-	$query = "SELECT * FROM tbl_aprendiz WHERE estatus = 0 ";
+	$query = "SELECT * FROM tbl_registros WHERE estatus = 0 AND rol = 'aprendiz'";
 
     if (isset($_POST['consulta'])) {
+		//Escapamos datos
 		$q = $conn->real_escape_string($_POST['consulta']);
 		
-    	$query = "SELECT DISTINCTROW id_a,nombres,apellidos,email,telefono,numero_ficha FROM tbl_aprendiz WHERE estatus = 0 AND (id_a LIKE '%" .$q. "%'
-		OR nombres LIKE '%" .$q. "%' OR apellidos LIKE '%" .$q. "%' OR email LIKE '%" .$q. "%' OR numero_ficha LIKE '%" .$q. "%')";
+		//Consulta de busqueda
+    	$query = "SELECT id,nombre,apellidos,email,telefono FROM tbl_registros WHERE rol = 'aprendiz' AND
+		estatus = 0 AND (id LIKE '%" .$q. "%' OR nombre LIKE '%" .$q. "%' OR apellidos LIKE '%" .$q. "%' 
+		OR email LIKE '%" .$q. "%' OR telefono LIKE '%" .$q. "%')";
     }
 
 	$resultado = $conn->query($query);
 	
+	//Comprobamos que existan los datos
     if ($resultado->num_rows>0) {
     	$salida.="<table border=1 class='tabla_datos'>
     			<thead>
@@ -32,7 +37,6 @@
     					<td>Apellidos</td>
     					<td>Email</td>
                         <td>Telefono</td>
-                        <td>Número Ficha</td>
                         <td>Acción</td>
     				</tr>
     			</thead>
@@ -40,15 +44,14 @@
 
     	while ($fila = $resultado->fetch_assoc()) {
     		$salida.="<tr>
-    					<td>".$fila['id_a']."</td>
-    					<td>".$fila['nombres']."</td>
+    					<td>".$fila['id']."</td>
+    					<td>".$fila['nombre']."</td>
     					<td>".$fila['apellidos']."</td>
     					<td>".$fila['email']."</td>
                         <td>".$fila['telefono']."</td>
-                        <td>".$fila['numero_ficha']."</td>
-                        <td><a href='../administrador/editarAprendiz?id_a=".$fila['id_a']." '><ion-icon name='create-outline' class='editar' title='Editar'></ion-icon></a> ||
-                        <a href='../administrador/includes/eliminarAprendiz.php?id_a=".$fila['id_a']."'><ion-icon name='trash-outline' class='eliminar' title='Eliminar' id='confirm'></ion-icon></a>|| 
-                        <a href='../administrador/includes/habilitarAprendiz.php?id_a=".$fila['id_a']."'><ion-icon name='thumbs-up-outline' class='inhabilitar' title='Habilitar'></ion-icon></a></td>
+                        <td><a href='../administrador/editarAprendiz?id=".$fila['id']."'><ion-icon name='create-outline' class='editar' title='Editar'></ion-icon></a> ||
+                        <a href='../administrador/includes/eliminarAprendiz.php?id=".$fila['id']."'><ion-icon name='trash-outline' class='eliminar' title='Eliminar' id='confirm'></ion-icon></a>|| 
+                        <a href='../administrador/includes/habilitarAprendiz.php?id=".$fila['id']."'><ion-icon name='thumbs-up-outline' class='inhabilitar' title='Habilitar'></ion-icon></a></td>
     				</tr>";
     	}
     	$salida.="</tbody></table>";
@@ -56,8 +59,10 @@
     	$salida.="Los datos que buscas no se encuentran en el momento.";
     }
 
+	//Imrpimimos
     echo $salida;
 
+	//Cerramos la conexión
     $conn->close();
 
 

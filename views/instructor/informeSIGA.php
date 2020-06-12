@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['instructor'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -37,6 +38,7 @@
                     
                         include '../../database/conexion.php';
 
+                        //Mostrar informes de X Instructor 
                         $sql = "SELECT * FROM tbl_informe WHERE id_instructor = '".$id."'";
 
                         $resultado = mysqli_query($conexion, $sql);

@@ -2,6 +2,7 @@
 
 include '../../../database/conexion.php';
 
+//Recibir datos del formulario
 $id = $_POST['txtid'];
 $nombre = $_POST['txtnombre'];
 $apellidos = $_POST['txtapellidos'];
@@ -10,6 +11,7 @@ $telefono = $_POST['txttel'];
 $clave = $_POST['txtclave'];
 $confirmar_clave = $_POST['txtconfirmar_clave'];
 
+//Comprobar si es diferente de Null 
 if ($nombre != null || $apellidos != null || $email != null || $telefono != null || $clave != null || $confirmar_clave != null) {
     $sql2 = "UPDATE tbl_registros SET nombre = '".$nombre."', apellidos = '".$apellidos."', email = '".$email."', 
     telefono = '".$telefono."', clave = '".$clave."', confirmarClave =  '".$confirmar_clave."'

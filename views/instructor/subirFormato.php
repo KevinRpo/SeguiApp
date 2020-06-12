@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['instructor'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -39,6 +40,7 @@
                         include '../../database/conexion.php';
                         $query = mysqli_query($conexion, "SELECT id_aprendiz FROM tbl_asignar_aprendiz WHERE id_instructor = '$id'");
                     
+                        //Consultamos los aprendices asignados 
                         foreach($query as $id_aprendiz) {
                                 echo "<option value='".$id_aprendiz['id_aprendiz']."'>".$id_aprendiz['id_aprendiz']."</option>";
                         }

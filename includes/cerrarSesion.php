@@ -1,11 +1,13 @@
 <?php
 
+//Iniciar sesión
 session_start();
 
+//Destruir sesión
 session_destroy();
 
-header("location: ../index");
-
+//Redireccionar y terminar 
+header("location: ../");
 die();
 
 ?>

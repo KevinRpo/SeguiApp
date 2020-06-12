@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -15,6 +16,8 @@
       <link rel="icon" href="../../assets/images/seguiapp.ico" />
       <link rel="stylesheet" href="../../assets/icons/css/all.min.css" />
       <link rel="stylesheet" href="./css/formularios.css" />
+      <script src="js/sweetalert2@9.js"></script>
+      <script src="js/validar.js"></script>
       <title>SeguiApp</title>
   </head>
   <body>
@@ -25,7 +28,7 @@
                 <h2>SeguiApp<br>SENA</h2>
             </section>
         </section>
-        <form action="../administrador/includes/agregarInstructor.php" method="POST" class="form_contact">
+        <form action="../administrador/includes/agregarInstructor.php" method="POST" class="form_contact" onsubmit="return validarDatosInstructor();">
             <h2 class="h2">Agregar Instructor <i class="fas fa-user-plus"></i></h2> <br />
             <div class="user_info">
                 <input type="text" name="id" id="id" placeholder="Identificación" required /> 

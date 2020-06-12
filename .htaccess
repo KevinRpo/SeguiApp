@@ -1,0 +1,9 @@
+Options All -Indexes
+ErrorDocument 404 /seguiapp/errores/404.html 
+ErrorDocument 403 /seguiapp/errores/403.html 
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php

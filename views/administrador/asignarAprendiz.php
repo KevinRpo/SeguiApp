@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -17,18 +18,22 @@
       <link rel="stylesheet" href="./css/styles.css"/>
       <link rel="stylesheet" href="./css/formularios.css" />
       <link rel="stylesheet" href="./css/tables.css"/>
+      <script src="js/sweetalert2@9.js"></script>
+      <script src="js/validarDos.js"></script>
       <title>SeguiApp</title>
   </head>
   <body>
     <?php require_once ('./header/header.php'); ?>
         
     <section class="form_wrap2">
-            <form action="includes/asignarAprendiz.php" class="form_contact"  method="POST">
+            <form action="includes/asignarAprendiz.php" class="form_contact"  method="POST" onsubmit="return validarDatos();">
                 <div class="user_info">
                     <h2>Asignar Aprendiz</h2> 
                     <ion-icon id="open" class="abrir" name="eye-outline"></ion-icon>
+                    <!-- SI EXISTE GET LE DAMOS EL VALOR PREDEFINIDO  -->
                 <?php if(isset($_GET['id_a'])){ ?>
-                    <input type="number" name="id_aprendiz" id="id_aprendiz" placeholder="Id_Aprendiz" value="<?php echo $_GET['id_a']?>" required />
+                    <!-- SI NO EXISTE LO DEJAMOS POR DEFECTO -->
+                    <input type="number" name="id_aprendiz" placeholder="Id_Aprendiz" value="<?php echo $_GET['id_a']?>" required />
                 <?php }else{ ?>
                     <input type="number" name="id_aprendiz" id="id_aprendiz" placeholder="Id_Aprendiz" required />
                 <?php } ?>
@@ -37,7 +42,7 @@
                 <br /><br />
 
                 <?php if(isset($_GET['nombres'])){ ?>
-                    <input type="text" name="nombre_aprendiz" id="nombre_aprendiz" value="<?php echo $_GET['nombres']?>" required />
+                    <input type="text" name="nombre_aprendiz" value="<?php echo $_GET['nombres']?>" required />
                 <?php }else{ ?>
                     <input type="text" name="nombre_aprendiz" id="nombre_aprendiz" placeholder="Nombre Aprendiz" required />
                 <?php } ?>
@@ -45,7 +50,7 @@
 
                 <br /> <br />
                 <?php if(isset($_GET['apellidos'])){ ?>
-                    <input type="text" name="apellidos_aprendiz" id="apellidos_aprendiz" value="<?php echo $_GET['apellidos']?>" required />
+                    <input type="text" name="apellidos_aprendiz" value="<?php echo $_GET['apellidos']?>" required />
                 <?php }else{ ?>
                     <input type="text" name="apellidos_aprendiz" id="apellidos_aprendiz" placeholder="Apellidos Aprendiz" required />
                 <?php } ?>
@@ -53,7 +58,7 @@
 
                 <br /><br />
                 <?php if(isset($_GET['numero_ficha'])){ ?>
-                    <input type="number" name="ficha_aprendiz" id="ficha_aprendiz" value="<?php echo $_GET['numero_ficha']?>" required />
+                    <input type="number" name="ficha_aprendiz" value="<?php echo $_GET['numero_ficha']?>" required />
                 <?php }else{ ?>
                     <input type="number" name="ficha_aprendiz" id="ficha_aprendiz" placeholder="Ficha Aprendiz" required />
                 <?php } ?>
@@ -62,11 +67,11 @@
                 <br /><br />
 
                 <?php if(isset($_GET['direccion'])){ ?>
-                    <input type="text" name="direccion_aprendiz" id="direccion_aprendiz" value="<?php echo $_GET['direccion']?>" required />
+                    <input type="text" name="direccion_aprendiz" value="<?php echo $_GET['direccion']?>" required />
                 <?php }else{ ?>
                     <input type="text" name="direccion_aprendiz" id="direccion_aprendiz" placeholder="Dirección - Empresa - Aprendiz" required />
                 <?php } ?>
-                    <input type="email" name="correo_instructor" id="correo_instructor" placeholder="Correo Instructor" required />
+                    <input type="email" name="correo_instructor" id="correo_instructor" placeholder="Correo Instructor"  />
 
                 <br /><br />
 
@@ -84,6 +89,7 @@
 
                     include '../../database/conexion.php';
 
+                    //Consultamos los aprendices habilitados
                     $sql = "SELECT * FROM tbl_aprendiz AS ap INNER JOIN
                             tbl_empresa AS em ON ap.NIT = em.NIT WHERE estatus = 1";
 
@@ -122,7 +128,8 @@
 
                     include '../../database/conexion.php';
 
-                    $sql = "SELECT * FROM tbl_instructor WHERE estatus = 1";
+                    //Consultamos los instructores habilitados
+                    $sql = "SELECT * FROM tbl_registros WHERE rol = 'instructor' AND estatus = 1";
 
                     $resultado = mysqli_query($conexion, $sql);
 
@@ -132,14 +139,14 @@
                     <tr>
                         <th>Identificación</th>
                         <th>Nombres</th>
-                        <th>Programa</th>
+                        <th>Apellidos</th>
                         <th>Teléfono</th>
                         <th>Correo</th>
                     </tr>
                     <tr>
-                        <td><?= $fila['id_instructor'] ?></td>
-                        <td><?= $fila['nombres'] ?></td>
-                        <td><?= $fila['programa'] ?></td>
+                        <td><?= $fila['id'] ?></td>
+                        <td><?= $fila['nombre'] ?></td>
+                        <td><?= $fila['apellidos'] ?></td>
                         <td><?= $fila['telefono'] ?></td>
                         <td><?= $fila['email'] ?></td>
                     </tr>

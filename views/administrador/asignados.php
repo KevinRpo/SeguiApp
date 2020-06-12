@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -40,6 +41,7 @@
                     
                      include '../../database/conexion.php';
 
+                     //Consultamos la lista de asignados totales
                         $sql = "SELECT * FROM tbl_asignar_aprendiz ORDER BY id_asignar DESC";
 
                         $resultado = mysqli_query($conexion, $sql);

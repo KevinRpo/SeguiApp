@@ -16,6 +16,7 @@ $estatus = 1;
 $sql = "INSERT INTO tbl_aprendiz(id_a, nombres, apellidos, email, telefono, rol, numero_ficha, estatus, NIT) 
         VALUES ('$id', '$nombre', '$apellidos', '$email', '$telefono', '$rol', '$ficha', '$estatus', '$nit')";
 
+//Comprobamos que la identificación del aprendiz no se repita
 $verificar_usuario = mysqli_query($conexion, "SELECT * FROM tbl_aprendiz WHERE id_a = '$id'");
 if(mysqli_num_rows($verificar_usuario) > 0){
     echo '
@@ -26,6 +27,7 @@ if(mysqli_num_rows($verificar_usuario) > 0){
     exit;
 }
 
+//Ejecutamos la conculta 
 $resultado = mysqli_query($conexion, $sql);
     
 if(!$resultado){

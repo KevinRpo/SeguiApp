@@ -24,13 +24,15 @@
                 <?php 
                  include '../../database/conexion.php';
 
+                 //Comprobamos que la sesión exista
                 if(!isset($_SESSION)) {session_start();} else{
 
-            
                 $id = $_SESSION['instructor'];
 
+                //Consulta del total de notificaciones a x instructor
                 $notificacion = mysqli_query($conexion, "SELECT * FROM tbl_mensaje WHERE id_instructor = '$id' AND leido = 0" );
 
+                //Mostramos de forma numérica el total de las notificaciones
                 $num = mysqli_num_rows($notificacion);
 
             }

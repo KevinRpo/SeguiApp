@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['admin'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
     ?>
@@ -29,6 +30,7 @@
         
         <div id="datos"></div>
 
+        <!-- Incluimos archivos de tipo JS -->
         <script src="../administrador/js/jquery.min.js"></script>
         <script src="../administrador/js/instructoresHabilitados.js"></script>
         <script src="js/confirmarDel.js"></script>

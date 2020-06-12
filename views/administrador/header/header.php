@@ -114,6 +114,14 @@
                         </span>
                     </a>
                 </li>
+                <li class="has-subnav">
+                    <a href="http://localhost:6677">
+                      <i class="far fa-comment-dots fa-2x"></i>
+                        <span class="nav-text">
+                            Chat
+                        </span>
+                    </a>
+                </li>
             </ul>
 
             <ul class="logout">

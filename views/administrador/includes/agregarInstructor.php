@@ -9,11 +9,11 @@ $email = $_POST['email'];
 $telefono = $_POST['tel'];
 $rol = $_POST['rol'];
 $programa = $_POST['programa'];
-$estatus = 1;
 
-$sql = "INSERT INTO tbl_instructor(id_instructor, nombres, apellidos, email, telefono, rol, programa, estatus) 
-        VALUES ('$id', '$nombre', '$apellidos', '$email', '$telefono', '$rol', '$programa', '$estatus')";
+$sql = "INSERT INTO tbl_instructor(id_instructor, nombres, apellidos, email, telefono, rol, programa) 
+        VALUES ('$id', '$nombre', '$apellidos', '$email', '$telefono', '$rol', '$programa')";
 
+//Comprobamos que la identificación del instructor no ha sido ingresada anteriormente
 $verificar_usuario = mysqli_query($conexion, "SELECT * FROM tbl_instructor WHERE id_instructor = '$id'");
 if(mysqli_num_rows($verificar_usuario) > 0){
     echo '

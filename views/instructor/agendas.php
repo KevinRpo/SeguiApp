@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['instructor'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
 
 ?>
@@ -37,6 +38,7 @@
 
                     $sql = mysqli_query($conexion, "SELECT * FROM tbl_citacion WHERE id_instructor = '$id' ORDER BY id_citacion DESC");
 
+                        //Guardamos la consulta en un array y la recorremos 
                         while ($fila = mysqli_fetch_array($sql)) {
                             
                     ?>

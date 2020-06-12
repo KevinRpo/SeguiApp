@@ -1,4 +1,5 @@
 function validar() {
+    //Recibir datos del formulario por medio del id
     var id, nombre, apellidos, email, tel, clave, confirmarClave, expresion;
     id = document.getElementById('id').value;
     nombre = document.getElementById('nombre').value;
@@ -8,8 +9,10 @@ function validar() {
     clave = document.getElementById('clave').value;
     confirmarClave = document.getElementById('confirmarClave').value;
 
+    //Expresión regular 
     expresion = /\w+@\w+\.+[a-z]/;
 
+    //Comprobar si el campo está vacio
     if(id === "" || nombre === "" || apellidos === "" || email === "" || tel === "" || clave === "" || confirmarClave === ""){
         Swal.fire(
             'Ups!',
@@ -17,14 +20,16 @@ function validar() {
             'question'
         )
         return false;
-    }else if (nombre.length>30){
+    }
+        //Comprobar cantidad de carácteres de los campos de texto del formulario
+    else if (nombre.length>30){
         Swal.fire(
             'Ups!',
             'El nombre es muy largo',
             'error'
         )
         return false;
-    }else if(nombre.length<4){
+    } else if(nombre.length<4){
         Swal.fire(
             'Ups!',
             'El nombre es muy corto',
@@ -45,35 +50,45 @@ function validar() {
             'error'
         )
         return false;
-    } else if(!expresion.test(email)){
+    } 
+        //Comprobar que el la expresión se cumpla
+    else if(!expresion.test(email)){
         Swal.fire(
             'Ups!',
             'El email no es válido',
             'error'
         )
         return false;
-    } else if(isNaN(id)){
+    } 
+        //Comprobar que el campo de texto de la identificación sea un número
+    else if(isNaN(id)){
         Swal.fire(
             'Ups!',
             'Tu identificación debe ser un número',
             'error'
         )
         return false;
-    }else if(isNaN(tel)){
+    }
+         //Comprobar que el campo de texto del teléfono sea un número
+    else if(isNaN(tel)){
         Swal.fire(
             'Ups!',
             'El telefono debe ser un número',
             'error'
         )
         return false;
-    } else if(tel.length<7){
+    }
+        //Tamaño minimo del campo del texto del telefono
+    else if(tel.length<7){
         Swal.fire(
             'Ups!',
             'Ingresa un número válido',
             'error'
         )
         return false;
-    }else if(clave != confirmarClave){
+    }
+        //Comprobar que las contraseñas coincidan
+    else if(clave != confirmarClave){
         Swal.fire(
             'Ups!',
             'Las contraseñas no coinciden',
@@ -88,6 +103,7 @@ function validarClave(){
     clave = document.getElementById('pass').value;
     confirmarClave = document.getElementById('pass_confirm').value;
 
+    //Comprobar que las contraseñas coincidan
     if(clave != confirmarClave){
         Swal.fire(
             'Ups!',

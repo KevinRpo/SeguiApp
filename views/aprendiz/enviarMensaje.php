@@ -2,8 +2,9 @@
     session_start();
     $id = $_SESSION['aprendiz'];
 
+    //Si la sesión no existe redirigimos al index
     if(!isset($id)){
-        header("location:../../index");
+        header("location:../../");
     } else {
         include '../../database/conexion.php';
 
@@ -35,6 +36,7 @@
                         <label for="id_instructor">Identificación - Instructor</label><br /><br />
                         <select id="id_instructor" name="id_instructor">
                             <?php
+                                //Mostramos los identificadores de los instructores que han notificado a X aprendiz
                                 foreach($sql as $id) {
                                     echo "<option value='".$id['id_instructor']."'>".$id['id_instructor']."</option>";
                                 }

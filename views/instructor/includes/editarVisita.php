@@ -7,7 +7,9 @@ $date = $_POST['date'];
 $hour = $_POST['hour'];
 $message = $_POST['message'];
 
+//Comprobar que los campos sean diferentes de Null
 if ($date != null || $hour != null || $message != null) {
+    //Actualizar datos
     $sql2 = "UPDATE tbl_citacion SET fecha = '".$date."', hora = '".$hour."', mensaje = '".$message."'
     WHERE id_citacion = '".$id."'";
 
@@ -22,5 +24,5 @@ if ($date != null || $hour != null || $message != null) {
                     alert("Error al actualizar, intente de nuevo.");
                     window.history.go(-1);
             </script>';
-    }
+    } 
 }

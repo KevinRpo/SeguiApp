@@ -12,7 +12,7 @@ $tel = $_POST['tel'];
 $email = $_POST['email'];
 $nombre_jefe= $_POST['nombre_jefe'];
 
-$sql = "INSERT INTO tbl_empresa(NIT, nombre, direccion, telefono, email, nombre_jefe, id_a) 
+$sql = "INSERT INTO tbl_empresa(NIT, nombre, direccion, telefono, correo_jefe, nombre_jefe, id_a) 
         VALUES ('$nit', '$nombre', '$direccion', '$tel', '$email', '$nombre_jefe', '$id') ";   
 
 $resultado = mysqli_query($conexion, $sql);
@@ -30,4 +30,5 @@ if(!$resultado){
     </script>';
 }
 
+//Cerrar conexion
 mysqli_close($conexion);
